@@ -336,188 +336,188 @@ var ibisCafeFemenino = {
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisChapada = {
+    name: "Organic Chapada",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["nutty", "cookie", "honey"],
+    origin: ["Brazila"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisColombianHuila = {
+    name: "Organic Colombian Huila",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["fruity", "spicy", "caramel"],
+    origin: ["Colombia"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisComsa = {
+    name: "Organic COMSA",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["nougat", "vanilla", "dark chocolate"],
+    origin: ["Honduras"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisDarkColombianHuila = {
+    name: "Organic Dark Colombian Huila",
+    brand: "Caffe Ibis",
+    roast: "Dark",
+    profile: ["toasted spice", "graham cracker", "molasses"],
+    origin: ["Colombia"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisEthiopianArabianNight = {
+    name: "Organic Ethiopian Arabian Night",
+    brand: "Caffe Ibis",
+    roast: "Dark",
+    profile: ["berry", "candy", "chocolate"],
+    origin: ["Ethiopia"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisEthiopianWorka = {
+    name: "Organic Ethiopian Worka",
+    brand: "Caffe Ibis",
+    roast: "Light",
+    profile: ["juicy", "floral", "berry"],
+    origin: ["Ethiopia"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisGuatemalanDark = {
+    name: "Organic Guatemalan Dark",
+    brand: "Caffe Ibis",
+    roast: "Dark",
+    profile: ["earthy", "grilled vegetables", "chocolate cookie"],
+    origin: ["Guatemala"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisGuatemalanForest = {
+    name: "Organic Guatemalan Forest",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["caramel", "fruity", "chocolate"],
+    origin: ["Guatemala"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisHonduranCopan= {
+    name: "Organic Honduran Copán",
+    brand: "Caffe Ibis",
+    roast: "Light",
+    profile: ["almond", "assam tea", "honey"],
+    origin: ["Honduras"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisIxil = {
+    name: "Organic Ixil",
+    brand: "Caffe Ibis",
+    roast: "medium",
+    profile: ["marzipan", "chocolate", "sweet"],
+    origin: ["Guatemala"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisIxilDark = {
+    name: "Organic Ixil Dark",
+    brand: "Caffe Ibis",
+    roast: "Dark",
+    profile: ["caramel", "spicy", "smoky"],
+    origin: ["Guatemala"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisKokowagayo = {
+    name: "Organic Kokowagayo",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["sweet", "rustic", "chamomile", "chocolate syrup"],
+    origin: ["Indonesia", "Sumatra"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisKokowagayoDark = {
+    name: "Organic Kokowagayo Dark",
+    brand: "Caffe Ibis",
+    roast: "Dark",
+    profile: ["earthy", "black pepper", "honey", "raisin"],
+    origin: ["Indonesia", "Sumatra"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisMexicanChiapas = {
+    name: "Organic Mexican Chiapas",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["citrus", "chocolate", "honey"],
+    origin: ["Mexico"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisPeruvianAndes = {
+    name: "Organic Peruvian Andes",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["floral", "milk chocolate", "honey"],
+    origin: ["Peru"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisPeruvianRainforest = {
+    name: "Organic Peruvian Rainforest",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["floral", "citrus", "dark chocolate"],
+    origin: ["Peru"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisSipiFalls = {
+    name: "Organic Sipi Falls",
+    brand: "Caffe Ibis",
+    roast: "Medium",
+    profile: ["honey", "apricot", "chocolate"],
+    origin: ["Uganda"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
-    brand: "",
-    roast: "",
-    profile: [""],
-    origin: [""],
+var ibisAnca = {
+    name: "Organic ANCA Nature's Delight",
+    brand: "Caffe Ibis",
+    roast: ["Medium", "Dark"],
+    profile: ["semi-sweet chocolate", "toasted marshmallow", "molasses"],
+    origin: ["Latin America"],
     decaf: false,
 };
 
 
-var coffeeName = {
-    name: "",
+var ibisDarkSide = {
+    name: "Organic Dark Side of the Moon",
     brand: "",
     roast: "",
     profile: [""],
