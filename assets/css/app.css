@@ -1,0 +1,39 @@
+.mdc-toolbar{
+  background-color: #6d4c41;
+  box-shadow: none;
+  min-height: 100px;
+  justify-content: center;
+}
+
+.header-image{
+  min-height: 100vh;
+  background-image: url('../images/ilovecoffee.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -250px;
+  z-index: 1;
+}
+
+.overlay{
+  min-height: calc(100vh - 100px);
+  position: relative;
+  z-index: 2;
+}
+
+.overlay h6{
+  color: #6d4c41;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  left: 46%;
+  bottom: 25px;
+}
+
+.overlay i{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  font-size: 60px;
+  color: #6d4c41;
+}
