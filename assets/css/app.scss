@@ -1,0 +1,32 @@
+$coffee-cream: #f5ece1;
+
+header{
+  img{
+    margin-top: -100px;
+  }
+
+  .uk-input{
+    font-size: 18px;
+    padding: 16px 18px;
+    border-radius: 3px;
+    height: 70px;
+    text-transform: uppercase;
+  }
+
+  .uk-button-default{
+    margin: 15px;
+    margin-right: 30px;
+    padding: 0 50px;
+  }
+}
+
+.uk-button-default{
+  background-color: $coffee-cream;
+  color: #000;
+}
+
+.uk-button-default:hover{
+  background-color: darken($coffee-cream, 10%);
+  transition-duration: 0.3s;
+  color: #000;
+}
