@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
 $coffee-cream: #f5ece1;
 $medium-roast: #6f4e37;
 $light-roast: #8a6144;
@@ -7,26 +8,38 @@ $gray: #525252;
 
 //Global Styles
 body,h1,h2,h3,h4,h5,h6,html,p {
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1,h2,h3 {
-  font-weight: 300;
+  font-weight: 100;
+}
+
+#search{
+  margin-top: 30px;
+  width: 100%;
+}
+
+.search-li{
+  margin: auto;
+  margin-left: 20px;
+  input{
+    border-radius: 5px;
+  }
 }
 
 .uk-button-default {
-  background-color: $light-roast;
-  border: 1px solid $light-roast;
-  color: #fff;
+  background-color: $coffee-cream;
+  border: 0;
+  color: $dark-roast;
 }
 
-.uk-button-default:active,
-.uk-button-default:focus,
 .uk-button-default:hover {
-  background-color: darken($coffee-cream, 10%);
+  background-color: darken($coffee-cream, 20%);
   transition-duration: 0.3s;
   color: #000;
 }
+
 //Local Styles
 #login {
   min-height: 100vh;
@@ -60,27 +73,39 @@ h1,h2,h3 {
   background-color: $coffee-cream;
 }
 
-#landing {
-  header {
-    .uk-position-center {
-      top: 35% !important;
+#landing{
+  header{
+    h1, h3{
+      color: #fff;
     }
 
-    .uk-input {
-      font-size: 18px;
-      padding: 16px 18px;
-      border-radius: 3px;
-      height: 70px;
-      text-transform: uppercase;
+    h1{
+      font-size:80px;
     }
 
-    .uk-button-default {
-      margin: 15px 30px 15px 15px;
-      padding: 0 50px;
+    .uk-input{
+      padding: 30px 10px;
+      border-color: #fff;
+      border-radius: 5px;
+      color: #999;
+      font-weight: 300;
+    }
+
+    nav{
+      img{
+        max-height: 80px;
+        padding: 10px;
+
+      }
     }
   }
 
-  .coffee-grid {
-    padding: 50px;
+  #myVideo{
+    height: 100vh;
+    z-index: 1;
+  }
+
+  .overlay{
+    z-index: 10;
   }
 }

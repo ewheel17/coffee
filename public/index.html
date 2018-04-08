@@ -18,24 +18,56 @@
 
   <!--Firebase Scripts -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  
+
 </head>
 
 <body id="landing">
 
   <header>
-    <div class="uk-position-relative">
-        <input class="uk-input uk-position-center uk-width-large" type="text" placeholder="Zip code" autofocus>
-      <img src="assets/images/coffee.jpg" alt="">
-      <div class="uk-position-top">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                  <a class="uk-button uk-button-default" href="login.html">Login</a>
-                </ul>
-            </div>
-        </nav>
+
+    <nav class="uk-navbar-container" uk-navbar>
+
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+       <li><img src="assets/images/Asset8.png"></li>
+      
+        <li class="search-li"><form class="uk-search uk-search-default">
+          <span uk-search-icon></span>
+          <input class="uk-search-input" type="search" placeholder="Search...">
+      </form></li>
+     </ul>
+        </div>
+
       </div>
+
+      <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+
+
+
+    <div class="uk-position-relative">
+
+      <div class="uk-position-center uk-text-center overlay">
+        <h1>Klatsch<h1>
+        <h3>Finding the coffee you like, when you like it.</h3>
+        <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
+        <div>
+          <a class="uk-button uk-button-default" id="search">Get that covfefe :)</a>
+        </div>
+      </div>
+        <video autoplay loop class="fillWidth" id=#myVideo>
+            <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
     </div>
   </header>
 

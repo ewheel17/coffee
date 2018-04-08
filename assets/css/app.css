@@ -5,20 +5,6 @@ body, h1, h2, h3, h4, h5, h6, html, p {
 h1, h2, h3 {
   font-weight: 300; }
 
-.uk-button-default {
-  background-color: #8a6144;
-  border: 1px solid #8a6144;
-  color: #fff; }
-
-.uk-button-default:active,
-.uk-button-default:focus,
-.uk-button-default:hover {
-  background-color: #e8d4bb;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  color: #000; }
-
 #login {
   min-height: 100vh;
   background-color: #f5ece1; }
@@ -42,20 +28,3 @@ h1, h2, h3 {
 #dashboard {
   min-height: 100vh;
   background-color: #f5ece1; }
-
-#landing header .uk-position-center {
-  top: 35% !important; }
-
-#landing header .uk-input {
-  font-size: 18px;
-  padding: 16px 18px;
-  border-radius: 3px;
-  height: 70px;
-  text-transform: uppercase; }
-
-#landing header .uk-button-default {
-  margin: 15px 30px 15px 15px;
-  padding: 0 50px; }
-
-#landing .coffee-grid {
-  padding: 50px; }
