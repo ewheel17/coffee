@@ -54,7 +54,7 @@ h1, h2, h3 {
 
 #landing {
   min-height: 100vh;
-  background-color: #f5ece1; }
+  background-color: #fff; }
   #landing header h1, #landing header h3 {
     color: #fff; }
   #landing header h1 {
@@ -65,7 +65,7 @@ h1, h2, h3 {
     border-radius: 5px;
     color: #999;
     font-weight: 300; }
-  #landing header nav img {
+  #landing nav img {
     max-height: 80px;
     padding: 10px; }
   #landing #myVideo {

@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Share:400,700');
+@import 'responsive';
+@import 'vars';
 
-$coffee-cream: #f5ece1;
-$medium-roast: #6f4e37;
-$light-roast: #8a6144;
-$dark-roast: #533a29;
-$gray: #525252;
 
+//***************
 //Global Styles
+//***************
 body,h1,h2,h3,h4,h5,h6,html,p {
   font-family: 'Lato', sans-serif;
 }
@@ -41,7 +38,13 @@ h1,h2,h3 {
   color: #000;
 }
 
+
+
+//***************
 //Local Styles
+//***************
+
+//Login Page
 #login {
   min-height: 100vh;
   background-color: $coffee-cream;
@@ -69,14 +72,20 @@ h1,h2,h3 {
   }
 }
 
+
+
+//Dashboard
 #dashboard{
   min-height: 100vh;
   background-color: $coffee-cream;
 }
 
+
+
+//Landing
 #landing{
   min-height: 100vh;
-  background-color: $coffee-cream;
+  background-color: #fff;
 
   header{
     h1, h3{
@@ -94,12 +103,12 @@ h1,h2,h3 {
       color: #999;
       font-weight: 300;
     }
+  }
 
-    nav{
-      img{
-        max-height: 80px;
-        padding: 10px;
-      }
+  nav{
+    img{
+      max-height: 80px;
+      padding: 10px;
     }
   }
 
