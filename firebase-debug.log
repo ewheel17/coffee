@@ -1,0 +1,49 @@
+[debug] [2018-04-09T00:45:28.115Z] ----------------------------------------------------------------------
+[debug] [2018-04-09T00:45:28.119Z] Command:       /Users/alecdown/.nvm/versions/node/v9.11.1/bin/node /Users/alecdown/.nvm/versions/node/v9.11.1/bin/firebase serve
+[debug] [2018-04-09T00:45:28.120Z] CLI Version:   3.18.2
+[debug] [2018-04-09T00:45:28.120Z] Platform:      darwin
+[debug] [2018-04-09T00:45:28.120Z] Node Version:  v9.11.1
+[debug] [2018-04-09T00:45:28.120Z] Time:          Sun Apr 08 2018 18:45:28 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:28.121Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-09T00:45:28.154Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-09T00:45:28.154Z] > authorizing via signed-in user
+[debug] [2018-04-09T00:45:28.159Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-09T00:45:28.159Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/pVYXa9_dcDYcw9HVVvQOZ_qD6o_0AcMMUhkmQXba5tg',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Apr 08 2018 18:45:28 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:28.730Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-09T00:45:28.736Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coffee-5b1b1  
+  
+ Sun Apr 08 2018 18:45:28 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:29.269Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-09T00:45:29.269Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coffee-5b1b1/tokens  
+  
+ Sun Apr 08 2018 18:45:29 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:29.790Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-09T00:45:29.792Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/coffee-5b1b1  
+  
+ Sun Apr 08 2018 18:45:29 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:30.452Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/alecdown/Documents/Coding/coffee'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-09T00:45:32.127Z] Fetching environment
+[debug] [2018-04-09T00:45:32.129Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/60856368857:getServerAppConfig  
+  
+ Sun Apr 08 2018 18:45:32 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:32.130Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/60856368857/clients/_:getWebAppConfig  
+  
+ Sun Apr 08 2018 18:45:32 GMT-0600 (MDT)
+[debug] [2018-04-09T00:45:32.518Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-04-09T00:45:32.538Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-09T00:45:32.539Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-09T00:45:34.084Z] Parsing function triggers

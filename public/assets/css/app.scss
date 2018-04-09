@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Share:400,700');
 
 $coffee-cream: #f5ece1;
 $medium-roast: #6f4e37;
@@ -74,6 +75,9 @@ h1,h2,h3 {
 }
 
 #landing{
+  min-height: 100vh;
+  background-color: $coffee-cream;
+
   header{
     h1, h3{
       color: #fff;
@@ -95,7 +99,6 @@ h1,h2,h3 {
       img{
         max-height: 80px;
         padding: 10px;
-
       }
     }
   }
@@ -108,4 +111,13 @@ h1,h2,h3 {
   .overlay{
     z-index: 10;
   }
+}
+
+.logo-text{
+  font-family: 'Share', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px !important;
+  color: #000 !important;
+  transform: scale(1, 1.3);
 }

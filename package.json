@@ -1,0 +1,22 @@
+{
+  "name": "coffee",
+  "version": "1.0.0",
+  "description": "Discover new coffee you love, and find out where to drink it!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadManta/coffee.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadManta/coffee/issues"
+  },
+  "homepage": "https://github.com/MadManta/coffee#readme",
+  "dependencies": {
+    "@google/maps": "^0.4.6"
+  }
+}
