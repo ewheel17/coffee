@@ -1,27 +1,37 @@
 @import 'responsive';
 @import 'vars';
 
-
 //***************
 //Global Styles
 //***************
-body,h1,h2,h3,h4,h5,h6,html,p {
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+p {
   font-family: 'Lato', sans-serif;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-weight: 100;
 }
 
-#search{
+#search {
   margin-top: 30px;
   width: 100%;
 }
 
-.search-li{
-  margin: auto;
-  margin-left: 20px;
-  input{
+.search-li {
+  margin: auto auto auto 20px;
+
+  input {
     border-radius: 5px;
   }
 }
@@ -37,21 +47,15 @@ h1,h2,h3 {
   transition-duration: 0.3s;
   color: #000;
 }
-
-
-
 //***************
 //Local Styles
 //***************
-
 //Login Page
 #login {
-  main{
-
-    a{
+  main {
+    a {
       color: $medium-roast;
       font-weight: 300 !important;
-
     }
   }
 
@@ -61,46 +65,41 @@ h1,h2,h3 {
     margin-top: 20px;
   }
 
-  footer{
+  footer {
     margin-top: 50px;
   }
 
-  a:hover{
+  a:hover {
     text-decoration-style: none;
     color: $dark-roast;
     transition-duration: 0.3s;
   }
 
-  img{
+  img {
     margin-top: 100px;
   }
 }
-
-
-
 //Dashboard
-#dashboard{
+#dashboard {
   min-height: 100vh;
   background-color: $coffee-cream;
 }
-
-
-
 //Landing
-#landing{
+#landing {
   min-height: 100vh;
   background-color: #fff;
 
-  header{
-    h1, h3{
+  header {
+    h1,
+    h3 {
       color: #fff;
     }
 
-    h1{
-      font-size:80px;
+    h1 {
+      font-size: 80px;
     }
 
-    .uk-input{
+    .uk-input {
       padding: 30px 10px;
       border-color: #fff;
       border-radius: 5px;
@@ -109,24 +108,24 @@ h1,h2,h3 {
     }
   }
 
-  nav{
-    img{
+  nav {
+    img {
       max-height: 80px;
       padding: 10px;
     }
   }
 
-  #myVideo{
+  #myVideo {
     height: 100vh;
     z-index: 1;
   }
 
-  .overlay{
+  .overlay {
     z-index: 10;
   }
 }
 
-.logo-text{
+.logo-text {
   font-family: 'Share', sans-serif !important;
   text-transform: uppercase;
   font-weight: 700;
@@ -135,27 +134,36 @@ h1,h2,h3 {
   transform: scale(1, 1.3);
 }
 
-.section-two{
+.section-two {
   padding: 100px 0;
   background-color: $coffee-cream;
 
-  .coffee-grid{
-    img{
+  .coffee-grid {
+    img {
       max-height: 200px;
       padding: 30px;
     }
 
-    img:hover{
+    img:hover {
       max-height: 210px;
       transition: max-height 400ms ease-in-out;
     }
 
-    h2{
+    h2 {
       margin: 10px 0;
     }
   }
 }
 
-.copyright{
+.copyright {
   font-size: 10px;
 }
+//
+// @media (min-width: 1900px) {
+//
+//   #myVideo{
+//     width: 100% !important;
+//     height: auto !important;
+//   }
+//
+// }

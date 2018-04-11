@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Coffee</title>
+  <title>Neighborbrew</title>
   <meta name="description" content="Coffee">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
@@ -20,23 +20,48 @@
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
 </head>
+<body id="landing">
+  <header>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li><a class="logo-text" href="#">Neighborbrew</a></li>
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li><a href="#" id="my-account">Account</a></li>
+          <li><a href="#" id="logout">Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="uk-position-relative">
+      <div class="uk-position-center uk-text-center overlay">
+        <h1>Neighborbrew<h1>
+        <h3>Finding the coffee you like, when you like it.</h3>
+        <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
+        <div>
+          <a class="uk-button uk-button-default" id="search">Get that covfefe :)</a>
+        </div>
+      </div>
+      <video autoplay loop id=#myVideo>
+          <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+    </div>
+  </header>
+  <main>
 
-<body id="dashboard">
-
-
-<h1> WELCOME TO COFFEE </h1>
-
-<footer>
-
-  <div class="uk-text-center copyright">
-    <p>
-      <strong>Copyright &copy; 2018-209</strong><br />
-      Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br />
-      Icons made from www.flaticon.com
-    </p>
-  </div>
-
-</footer>
+  </main>
+  <footer>
+    <div class="uk-text-center copyright">
+      <p>
+        <strong>Copyright &copy; 2018-209</strong><br />
+        Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br />
+        Icons made from www.flaticon.com
+      </p>
+    </div>
+  </footer>
 
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
@@ -44,15 +69,11 @@
 
   <!-- jQuery -->
   <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- Custom JS -->
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/app.js"></script>
 
 </body>
-
-
 </html>

@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Share:400,700");
-body, h1, h2, h3, h4, h5, h6, html, p {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+p {
   font-family: 'Lato', sans-serif; }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 100; }
 
 #search {
@@ -11,8 +21,7 @@ h1, h2, h3 {
   width: 100%; }
 
 .search-li {
-  margin: auto;
-  margin-left: 20px; }
+  margin: auto auto auto 20px; }
   .search-li input {
     border-radius: 5px; }
 
@@ -58,7 +67,8 @@ h1, h2, h3 {
 #landing {
   min-height: 100vh;
   background-color: #fff; }
-  #landing header h1, #landing header h3 {
+  #landing header h1,
+  #landing header h3 {
     color: #fff; }
   #landing header h1 {
     font-size: 80px; }
