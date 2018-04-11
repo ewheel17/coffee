@@ -18,62 +18,108 @@
 
   <!--Firebase Scripts -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
 </head>
-<body id="landing">
-  <header>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-          <li><a class="logo-text" href="#">Neighborbrew</a></li>
-        </ul>
-      </div>
-      <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-          <li><a href="#" id="my-account">Account</a></li>
-          <li><a href="#" id="logout">Sign Out</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="uk-position-relative">
-      <div class="uk-position-center uk-text-center overlay">
-        <h1>Neighborbrew<h1>
-        <h3>Finding the coffee you like, when you like it.</h3>
-        <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
-        <div>
-          <a class="uk-button uk-button-default" id="search">Get that covfefe :)</a>
+
+<body class="landing">
+  <div id="dashboard-body">
+    <header>
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <li><a class="logo-text" href="#">Neighborbrew</a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li id="user-name"><a href="#">Hello, {name}!</a></li>
+            <li><a href="#account-settings" uk-toggle>Account</a></li>
+
+            <li><a href="#" id="logout">Sign Out</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="uk-position-relative">
+        <div class="uk-position-center uk-text-center overlay">
+          <div class="overlay-box">
+          <h1>Neighborbrew<h1>
+          <h3>Finding the coffee you like, when you like it.</h3>
+          <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
+          <div>
+            <a class="uk-button uk-button-default" id="search">Find Coffee</a>
+          </div>
         </div>
       </div>
-      <video autoplay loop id=#myVideo>
-          <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-      </video>
+          <video autoplay loop id=#myVideo>
+            <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+      </div>
+    </header>
+    <main>
+      <div class="uk-child-width-1-2@m uk-text-center" uk-grid>
+        <div>
+          <img src="http://via.placeholder.com/600x400">
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/600x400">
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/600x400">
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/600x400">
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="uk-text-center copyright">
+        <p>
+          <strong>Copyright &copy; 2018-209</strong><br />
+          Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br />
+          Icons made from www.flaticon.com
+        </p>
+      </div>
+    </footer>
+
+    <!--Account Modal-->
+    <div id="account-settings" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-text-center"> Account Settings </h3>
+        <button class="uk-button uk-button-default" href="#verify-delete" uk-toggle>Close Account</button>
+        <button class="uk-button uk-button-default" id="change-pw">Change Password</button>
+      </div>
     </div>
-  </header>
-  <main>
 
-  </main>
-  <footer>
-    <div class="uk-text-center copyright">
-      <p>
-        <strong>Copyright &copy; 2018-209</strong><br />
-        Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br />
-        Icons made from www.flaticon.com
-      </p>
+    <!--Verify Account Deletion Modal-->
+    <div id="verify-delete" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-text-center"> Verify Account Deletion</h3>
+        <p> <strong>Warning!</strong> You are about to delete your account. All information will be removed and cannot be recovered.</p>
+        <p>Please verify your account credentials in order to delete your account.</p>
+        <form class="uk-form-stacked">
+          <div class="uk-margin">
+            <input type="password" class="uk-input" id="password-reauth" placeholder="Password">
+          </div>
+        </form>
+        <p> Are you sure you want to delete your account? </p>
+        <button class="uk-button uk-button-danger" id="close-account-submit">Yes, I'm sure!</button>
+        <button class="uk-button uk-button-primary uk-modal-close">No, I like coffee.</button>
+      </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- UIkit JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
 
-  <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  <!-- Custom JS -->
-  <script src="assets/js/auth.js"></script>
-  <script src="assets/js/app.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>

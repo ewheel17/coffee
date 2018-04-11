@@ -1,20 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Share:400,700");
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-html,
-p {
+@media (max-width: 960px) {
+  .coffee-list h3 {
+    text-align: center !important; }
+  .coffee-list p {
+    text-align: center !important; }
+  .coffee-list img {
+    display: inline !important; } }
+
+html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-weight: 100; }
+
+footer {
+  margin-top: 50px;
+  background-color: #eee;
+  padding: 20px; }
+  footer p {
+    margin: 0; }
+
+#dashboard-body {
+  display: none; }
+
+#no-user {
+  display: none; }
 
 #search {
   margin-top: 30px;
@@ -24,6 +35,9 @@ h3 {
   margin: auto auto auto 20px; }
   .search-li input {
     border-radius: 5px; }
+
+.copyright {
+  font-size: 10px; }
 
 .uk-button-default {
   background-color: #f5ece1;
@@ -37,56 +51,6 @@ h3 {
   transition-duration: 0.3s;
   color: #000; }
 
-#login main a {
-  color: #6f4e37;
-  font-weight: 300 !important; }
-
-#login h3 {
-  color: #6f4e37;
-  font-weight: 100 !important;
-  margin-top: 20px; }
-
-#login footer {
-  margin-top: 50px; }
-
-#login a:hover {
-  -webkit-text-decoration-style: none;
-  text-decoration-style: none;
-  color: #533a29;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-
-#login img {
-  margin-top: 100px; }
-
-#dashboard {
-  min-height: 100vh;
-  background-color: #f5ece1; }
-
-#landing {
-  min-height: 100vh;
-  background-color: #fff; }
-  #landing header h1,
-  #landing header h3 {
-    color: #fff; }
-  #landing header h1 {
-    font-size: 80px; }
-  #landing header .uk-input {
-    padding: 30px 10px;
-    border-color: #fff;
-    border-radius: 5px;
-    color: #999;
-    font-weight: 300; }
-  #landing nav img {
-    max-height: 80px;
-    padding: 10px; }
-  #landing #myVideo {
-    height: 100vh;
-    z-index: 1; }
-  #landing .overlay {
-    z-index: 10; }
-
 .logo-text {
   font-family: 'Share', sans-serif !important;
   text-transform: uppercase;
@@ -97,19 +61,44 @@ h3 {
   -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
-.section-two {
-  padding: 100px 0;
-  background-color: #f5ece1; }
-  .section-two .coffee-grid img {
-    max-height: 200px;
-    padding: 30px; }
-  .section-two .coffee-grid img:hover {
-    max-height: 210px;
-    -webkit-transition: max-height 400ms ease-in-out;
-    -o-transition: max-height 400ms ease-in-out;
-    transition: max-height 400ms ease-in-out; }
-  .section-two .coffee-grid h2 {
-    margin: 10px 0; }
+.coffee-list h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: left; }
 
-.copyright {
-  font-size: 10px; }
+.coffee-list p {
+  margin: 0;
+  text-align: left; }
+
+.coffee-list img {
+  margin: 0;
+  margin-bottom: 20px;
+  max-height: 15px;
+  height: auto;
+  display: block; }
+
+.landing {
+  min-height: 100vh;
+  background-color: #fff; }
+  .landing header {
+    max-width: 100%; }
+    .landing header h1, .landing header h3 {
+      color: #fff; }
+    .landing header h1 {
+      font-size: 80px; }
+    .landing header .uk-input {
+      padding: 30px 10px;
+      border-color: #fff;
+      border-radius: 5px;
+      color: #999;
+      font-weight: 300; }
+  .landing nav img {
+    max-height: 80px;
+    padding: 10px; }
+  .landing .overlay {
+    z-index: 10;
+    max-width: 100vw; }
+
+@media screen and (min-width: 1920px) {
+  video {
+    width: 100vw; } }

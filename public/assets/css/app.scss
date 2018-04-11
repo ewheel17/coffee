@@ -4,23 +4,29 @@
 //***************
 //Global Styles
 //***************
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-html,
-p {
+html,body,h1,h2,h3,h4,h5,h6,p {
   font-family: 'Lato', sans-serif;
 }
 
-h1,
-h2,
-h3 {
+h1,h2,h3 {
   font-weight: 100;
+}
+
+footer{
+  margin-top: 50px;
+  background-color: #eee;
+  padding: 20px;
+
+  p{
+    margin: 0;
+  }
+}
+
+#dashboard-body{
+  display:none;
+}
+#no-user{
+  display: none;
 }
 
 #search {
@@ -36,6 +42,10 @@ h3 {
   }
 }
 
+.copyright {
+  font-size: 10px;
+}
+
 .uk-button-default {
   background-color: $coffee-cream;
   border: 0;
@@ -47,51 +57,45 @@ h3 {
   transition-duration: 0.3s;
   color: #000;
 }
-//***************
-//Local Styles
-//***************
-//Login Page
-#login {
-  main {
-    a {
-      color: $medium-roast;
-      font-weight: 300 !important;
-    }
+
+.logo-text {
+  font-family: 'Share', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px !important;
+  color: #000 !important;
+  transform: scale(1, 1.3);
+}
+
+.coffee-list{
+  h3{
+    margin: 0;
+    margin-bottom: 5px;
+    text-align: left;
   }
 
-  h3 {
-    color: $medium-roast;
-    font-weight: 100 !important;
-    margin-top: 20px;
+  p{
+    margin: 0;
+    text-align: left;
   }
 
-  footer {
-    margin-top: 50px;
-  }
-
-  a:hover {
-    text-decoration-style: none;
-    color: $dark-roast;
-    transition-duration: 0.3s;
-  }
-
-  img {
-    margin-top: 100px;
+  img{
+    margin: 0;
+    margin-bottom: 20px;
+    max-height: 15px;
+    height: auto;
+    display: block;
   }
 }
-//Dashboard
-#dashboard {
-  min-height: 100vh;
-  background-color: $coffee-cream;
-}
-//Landing
-#landing {
+
+.landing {
   min-height: 100vh;
   background-color: #fff;
 
   header {
-    h1,
-    h3 {
+    max-width: 100%;
+
+    h1,h3 {
       color: #fff;
     }
 
@@ -115,55 +119,14 @@ h3 {
     }
   }
 
-  #myVideo {
-    height: 100vh;
-    z-index: 1;
-  }
-
   .overlay {
     z-index: 10;
+    max-width: 100vw;
   }
 }
 
-.logo-text {
-  font-family: 'Share', sans-serif !important;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 40px !important;
-  color: #000 !important;
-  transform: scale(1, 1.3);
-}
-
-.section-two {
-  padding: 100px 0;
-  background-color: $coffee-cream;
-
-  .coffee-grid {
-    img {
-      max-height: 200px;
-      padding: 30px;
-    }
-
-    img:hover {
-      max-height: 210px;
-      transition: max-height 400ms ease-in-out;
-    }
-
-    h2 {
-      margin: 10px 0;
-    }
+@media screen and (min-width: 1920px) {
+  video{
+    width: 100vw;
   }
 }
-
-.copyright {
-  font-size: 10px;
-}
-//
-// @media (min-width: 1900px) {
-//
-//   #myVideo{
-//     width: 100% !important;
-//     height: auto !important;
-//   }
-//
-// }
