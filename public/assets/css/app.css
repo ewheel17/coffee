@@ -44,7 +44,9 @@ footer {
   border: 0;
   color: #533a29; }
 
-.uk-button-default:hover {
+.uk-button-default:hover,
+.uk-button-default:focus,
+.uk-button-default:active {
   background-color: #dcbc95;
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;

@@ -52,7 +52,9 @@ footer{
   color: $dark-roast;
 }
 
-.uk-button-default:hover {
+.uk-button-default:hover,
+.uk-button-default:focus,
+.uk-button-default:active {
   background-color: darken($coffee-cream, 20%);
   transition-duration: 0.3s;
   color: #000;
