@@ -9,6 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
 //Login Auth
 $("#coffee-auth").on("click", function(event) {
   event.preventDefault();
@@ -33,15 +34,17 @@ $("#coffee-auth").on("click", function(event) {
 });
 
 //Auth Check & User Log
-var pathname = window.location.pathname;
 
-if (pathname === "/dashboard.html") {
-  firebase.auth().onAuthStateChanged(function(user) {
+  var pathname = window.location.pathname;
+
+  if (pathname === "/dashboard.html") {
+    firebase.auth().onAuthStateChanged(function(user) {
     if (user) {} else {
       window.location.replace("../index.html");
-    }
-  });
-}
+      }
+    });
+  }
+
 
 //Logout Script
 $("#logout").on("click", function() {
