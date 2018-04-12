@@ -18,107 +18,140 @@
 
   <!--Firebase Scripts -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
 </head>
 
-<body id="landing">
-
-  <header>
-
-    <nav class="uk-navbar-container" uk-navbar>
-
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-       <li><a class="logo-text" href="#">Neighborbrew</a></li>
-
-        <li class="search-li">
-          <form class="uk-search uk-search-default">
-          <span uk-search-icon></span>
-          <input class="uk-search-input" type="search" placeholder="Search...">
-      </form></li>
-     </ul>
+<body class="landing">
+  <div id="landing-body">
+    <header>
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <li><a class="logo-text" href="#">Neighborbrew</a></li>
+          </ul>
         </div>
-
-      </div>
-
-      <div class="uk-navbar-right">
-
-        <ul class="uk-navbar-nav">
-          <li><a href="login.html">Sign In</a></li>
-        </ul>
-
-      </div>
-
-    </nav>
-
-    <div class="uk-position-relative">
-
-      <div class="uk-position-center uk-text-center overlay">
-        <h1>Neighborbrew<h1>
-        <h3>Finding the coffee you like, when you like it.</h3>
-        <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
-        <div>
-          <a class="uk-button uk-button-default" id="search">Get that covfefe :)</a>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li><a href="#sign-up-modal" uk-toggle>Sign Up</a></li>
+            <li><a href="#login-modal" uk-toggle>Login</a></li>
+          </ul>
         </div>
-      </div>
-        <video autoplay loop class="fillWidth" id=#myVideo>
+      </nav>
+      <div class="uk-position-relative">
+        <div class="uk-position-center uk-text-center overlay">
+          <h1>Neighborbrew<h1>
+          <h3>Finding the coffee you like, when you like it.</h3>
+          <input class="uk-input uk-width-large" type="text" placeholder="Enter your address..." autofocus>
+          <div>
+            <a class="uk-button uk-button-default" id="search">Find Coffee</a>
+          </div>
+        </div>
+        <video autoplay loop id=#myVideo>
             <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
+      </div>
+    </header>
+    <main>
+      <div class="uk-container-expand" id="coffee-display">
+        <div class="uk-grid-collapse uk-text-center" uk-grid>
+          <div class="uk-width-2-3@m">
+            <div class="uk-tile uk-tile-default">
+              <h1>MAP</h1>
+              <img src="http://via.placeholder.com/600x400">
+            </div>
+          </div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-tile uk-tile-default">
+              <div class="coffee-list">
+                <h1>COFFEE LIST</h1>
+                <h3>Coffee #1</h3>
+                <p>Information. Information. Information.</p>
+                <img id="coffee-list" src="assets/images/5star.png">
+
+                <h3>Coffee #2</h3>
+                <p>Information. Information. Information.</p>
+                <img id="coffee-list" src="assets/images/5star.png">
+
+                <h3>Coffee #3</h3>
+                <p>Information. Information. Information.</p>
+                <img id="coffee-list" src="assets/images/5star.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="uk-text-center copyright">
+        <p>
+          <strong>Copyright &copy; 2018-209</strong><br /> Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br /> Icons made from www.flaticon.com
+        </p>
+      </div>
+    </footer>
+
+    <!--Signup Modal-->
+    <div id="sign-up-modal" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <img src="assets/images/Asset5.png" class="uk-align-center">
+        <h3 class="uk-text-center"> Sign Up </h3>
+        <p>You're so close to your very own, personalized coffee recommendations!</p>
+        <form class="uk-form-stacked">
+          <div class="uk-margin">
+            <input type="email" class="uk-input" id="email-signup" placeholder="Email">
+          </div>
+
+          <div class="uk-margin">
+            <input type="password" class="uk-input" id="password-signup" placeholder="Password">
+          </div>
+
+          <div id="firebaseui-auth-container"></div>
+
+          <div class="uk-margin">
+            <button class="uk-button uk-button-default uk-width-1-1" id="coffee-signup">Sign Up</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </header>
 
-<main>
-
-  <div class="uk-container-expand uk-align-center section-two">
-    <div class="uk-container-small uk-align-center coffee-grid">
-      <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
-        <div>
-          <img src="assets/images/002-coffee-beans.png" alt="coffee icon">
-          <h2> Ethically sourced. </h2>
+    <!--Login Modal-->
+    <div id="login-modal" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <img src="assets/images/Asset5.png" class="uk-align-center">
+        <h3 class="uk-text-center">Login</h3>
+        <div id="no-user">
+          <div class="uk-alert-danger" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>No user could be found with those credentials. Please try again.</p>
+          </div>
         </div>
-        <div>
-          <img src="assets/images/001-signs.png" alt="coffee icon">
-          <h2> Locally roasted. </h2>
-        </div>
-        <div>
-          <img src="assets/images/003-technology.png" alt="coffee icon">
-          <h2> Freshly brewed. </h2>
-        </div>
+        <form class="uk-form-stacked">
+          <div class="uk-margin">
+            <input type="email" class="uk-input" id="email-input" placeholder="Email">
+          </div>
+          <div class="uk-margin">
+            <input type="password" class="uk-input" id="password-input" placeholder="Password">
+          </div>
+          <div class="uk-margin">
+            <button class="uk-button uk-button-default uk-width-1-1" id="coffee-auth">Submit</button>
+          </div>
+          <a href="#" id="reset-password">Forgot my password</a>
+        </form>
       </div>
     </div>
   </div>
-
-
-</main>
-
-<footer>
-
-  <div class="uk-text-center copyright">
-    <p>
-      <strong>Copyright &copy; 2018-209</strong><br />
-      Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br />
-      Icons made from www.flaticon.com
-    </p>
-  </div>
-
-</footer>
 
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
 
   <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- Custom JS -->
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/app.js"></script>
 
 </body>
-
-
 </html>
