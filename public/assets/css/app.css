@@ -7,7 +7,6 @@
     text-align: center !important; }
   .coffee-list img {
     display: inline !important; } }
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
@@ -48,8 +47,6 @@ footer {
 .uk-button-default:focus,
 .uk-button-default:active {
   background-color: #dcbc95;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   color: #000; }
 
@@ -59,19 +56,15 @@ footer {
   font-weight: 700;
   font-size: 40px !important;
   color: #000 !important;
-  -webkit-transform: scale(1, 1.3);
-  -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
 .coffee-list h3 {
   margin: 0;
   margin-bottom: 5px;
   text-align: left; }
-
 .coffee-list p {
   margin: 0;
   text-align: left; }
-
 .coffee-list img {
   margin: 0;
   margin-bottom: 20px;
@@ -100,7 +93,11 @@ footer {
   .landing .overlay {
     z-index: 10;
     max-width: 100vw; }
+  .landing #map {
+    height: 400px; }
 
 @media screen and (min-width: 1920px) {
   video {
     width: 100vw; } }
+
+/*# sourceMappingURL=app.css.map */
