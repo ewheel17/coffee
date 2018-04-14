@@ -70,17 +70,21 @@ footer{
 }
 
 .coffee-list{
-  height: 400px;
+  height: 500px;
   overflow: hidden;
   overflow-y: auto;
-
-
+  margin-left: 20px;
+  padding: 20px;
 
   h3{
     margin: 0;
     margin-top: 5px;
     text-align: left;
     font-size: 16px;
+  }
+
+  h5{
+    text-align: left;
   }
 
   p{
@@ -135,7 +139,11 @@ footer{
   }
 
   #map {
-    height: 400px;
+    height: 500px;
+  }
+
+  .map-grid{
+    padding: 5px;
   }
 }
 

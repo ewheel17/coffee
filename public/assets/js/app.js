@@ -12,8 +12,8 @@ var infowindow;
 var apiKey = 'AIzaSyCWVKhQawuJXf_PrAnh7orfwb2QjVqLFQU';
 
 function initMap() {
-  var SLC = {lat: 40.761552, lng: -111.885752};
 
+  var SLC = {lat: 40.761552, lng: -111.885752};
   map = new google.maps.Map(document.getElementById('map'), {
     center: SLC,
     zoom: 13,
@@ -290,5 +290,7 @@ function createMarker(place) {
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
+
+    
   });
 }
