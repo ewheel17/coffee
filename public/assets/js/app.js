@@ -10,13 +10,37 @@ $(document).ready(function(){
 var map;
 var infowindow;
 var apiKey = 'AIzaSyCWVKhQawuJXf_PrAnh7orfwb2QjVqLFQU';
+var centerlat = 40.761552;
+var centerlng = -111.885752;
+var theZoom = 13;
+var theRadius = 13 * 300;
+
+$('#search').on('click', function(){
+    var address = $("#address-input").val().trim();
+    console.log(address);
+  
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co",
+      "method": "POST"
+    }
+  
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      centerlat = response.results[0].geometry.location.lat;
+      centerlng = response.results[0].geometry.location.lng;
+      initMap()
+  
+    });
+  });
 
 function initMap() {
 
-  var SLC = {lat: 40.761552, lng: -111.885752};
+  var place = {lat: centerlat, lng: centerlng};
   map = new google.maps.Map(document.getElementById('map'), {
-    center: SLC,
-    zoom: 13,
+    center: place,
+    zoom: theZoom,
     styles: [
         {
             "featureType": "administrative",
@@ -255,8 +279,8 @@ function initMap() {
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
-    location: SLC,
-    radius: 4000,
+    location: place,
+    radius: theRadius,
     keyword: ['coffee']
   }, callback);
 }
@@ -277,6 +301,7 @@ function callback(results, status) {
 //   $('#coffee-list').append(`<h3>${place.name}</h3><p>${place.vicinity}</p>`)
 // }
 
+var boundListenerArray = [];
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
@@ -285,12 +310,34 @@ function createMarker(place) {
     position: place.geometry.location,
     title: place.name,
     animation: google.maps.Animation.DROP
-  });
+    });
 
-  google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
-
+    });
     
-  });
 }
+
+function changeCenter(){
+    centerlng = map.getCenter().lng();
+    centerlat = map.getCenter().lat();
+    theZoom = map.getZoom();
+}
+
+$(document).ready(function() {
+  boundListenerArray.push(google.maps.event.addListener(map, "bounds_changed", function() {
+      if (boundListenerArray.length > 1) {
+        google.maps.event.removeListener(
+          boundListenerArray[boundListenerArray.length - 1]
+        );
+      }
+
+      setTimeout(function() {
+        changeCenter();
+        initMap();
+      }, 2000);
+      console.log(boundListenerArray);
+    })
+  );
+});
