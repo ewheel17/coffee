@@ -15,23 +15,25 @@ var centerlng = -111.885752;
 var theZoom = 13;
 var theRadius = 13 * 300;
 
+
 $('#search').on('click', function(){
     var address = $("#address-input").val().trim();
     console.log(address);
-  
+
     var settings = {
       "async": true,
       "crossDomain": true,
       "url": "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co",
       "method": "POST"
     }
-  
+
     $.ajax(settings).done(function (response) {
       console.log(response);
       centerlat = response.results[0].geometry.location.lat;
       centerlng = response.results[0].geometry.location.lng;
+      $('#coffee-list').html("");
       initMap()
-  
+
     });
   });
 
@@ -281,7 +283,7 @@ function initMap() {
   service.nearbySearch({
     location: place,
     radius: theRadius,
-    keyword: ['coffee']
+    keyword: ['local', 'coffee', 'shops']
   }, callback);
 }
 
@@ -289,17 +291,13 @@ function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
-      console.log(results[i].name)
       $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | Open: ${results[i].opening_hours.open_now}</p>
-        <p>${results[i].vicinity}</p>`)
+        <p>${results[i].vicinity}</p>`);
     }
     console.log(results);
   }
 }
 
-// function logResults(results,place){
-//   $('#coffee-list').append(`<h3>${place.name}</h3><p>${place.vicinity}</p>`)
-// }
 
 var boundListenerArray = [];
 
@@ -311,12 +309,18 @@ function createMarker(place) {
     title: place.name,
     animation: google.maps.Animation.DROP
     });
+    marker.addListener('click', function() {
+         infowindow.open(map, marker);
+       });
 
     google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+      console.log(place.name)
+    infowindow.setContent(`<h3>${place.name}</h3><p>${place.rating}<br />${place.vicinity}</p>`+
+    `<div><img src="${place.photos.getUrl}"</div>
+    `);
     infowindow.open(map, this);
     });
-    
+
 }
 
 function changeCenter(){
