@@ -4,7 +4,7 @@
   "description": "Discover new coffee you love, and find out where to drink it!",
   "main": "server.js",
   "scripts": {
-  "start": "node index.js"
+  "start": "node server.js"
   },
   "engines": {
     "node": "9.x.x"
