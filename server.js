@@ -1,19 +1,15 @@
 const express = require('express');
-
 var app = express();
+
+var port = process.env.PORT || 8080;
 
 app.set('view engine');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req,res) => {
+  res.render('index.html');
 });
 
-app.get('/bad', (req,res) => {
-  res.send({
-      errorMessage: 'There was an error'
-  });
-});
-
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(port, function(){
+  console.log("App is running on port" + port);
 });
