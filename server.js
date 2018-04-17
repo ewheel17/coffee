@@ -5,7 +5,7 @@ var app = express();
 app.set('view engine');
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req,res) => {
+app.get('/public', (req,res) => {
 });
 
 app.get('/bad', (req,res) => {
