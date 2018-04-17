@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MadManta/coffee#readme",
   "dependencies": {
     "@google/maps": "^0.4.6",
+    "express": "^4.16.3",
     "firebaseui": "^2.7.0"
   }
 }
