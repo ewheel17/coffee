@@ -4,7 +4,10 @@
   "description": "Discover new coffee you love, and find out where to drink it!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node index.js"
+  },
+  "engines": {
+    "node": "9.x.x"
   },
   "repository": {
     "type": "git",
