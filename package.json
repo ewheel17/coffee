@@ -1,10 +1,10 @@
 {
-  "name": "coffee",
+  "name": "heroku-node",
   "version": "1.0.0",
-  "description": "Discover new coffee you love, and find out where to drink it!",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Our sample Node to Heroku app",
+  "main": "server.js",
+  "engines": {
+    "node": "9.x.x"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/MadManta/coffee#readme",
   "dependencies": {
-    "@google/maps": "^0.4.6",
-    "firebaseui": "^2.7.0"
+    "express": "~4.9.8",
+    "passport": "^0.4.0"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
