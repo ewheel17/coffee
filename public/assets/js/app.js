@@ -288,10 +288,18 @@ function initMap() {
 }
 
 function callback(results, status) {
+  var openClose;
+
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
-      $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | Open: ${results[i].opening_hours.open_now}</p>
+      if (results[i].opening_hours.open_now === true) {
+        openClose = 'Open';
+      } else {
+        openClose = 'Closed';
+      }
+
+      $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
         <p>${results[i].vicinity}</p>`);
     }
     console.log(results);
@@ -314,7 +322,6 @@ function createMarker(place) {
        });
 
     google.maps.event.addListener(marker, 'click', function() {
-      console.log(place.name)
     infowindow.setContent(`<h3>${place.name}</h3><p>${place.rating}<br />${place.vicinity}</p>`+
     `<div><img src="${place.photos.getUrl}"</div>
     `);
@@ -341,7 +348,6 @@ $(document).ready(function() {
         changeCenter();
         initMap();
       }, 2000);
-      console.log(boundListenerArray);
     })
   );
 });
