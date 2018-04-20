@@ -18,7 +18,6 @@ var theRadius = 13 * 300;
 
 $('#search').on('click', function(){
     var address = $("#address-input").val().trim();
-    console.log(address);
 
     var settings = {
       "async": true,
@@ -28,7 +27,6 @@ $('#search').on('click', function(){
     }
 
     $.ajax(settings).done(function (response) {
-      console.log(response);
       centerlat = response.results[0].geometry.location.lat;
       centerlng = response.results[0].geometry.location.lng;
       $('#coffee-list').html("");
@@ -302,7 +300,6 @@ function callback(results, status) {
       $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
         <p>${results[i].vicinity}</p>`);
     }
-    console.log(results);
   }
 }
 
@@ -322,8 +319,8 @@ function createMarker(place) {
        });
 
     google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(`<h3>${place.name}</h3><p>${place.rating}<br />${place.vicinity}</p>`+
-    `<div><img src="${place.photos.getUrl}"</div>
+    infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>`+
+    `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>
     `);
     infowindow.open(map, this);
     });
@@ -346,7 +343,7 @@ $(document).ready(function() {
 
       setTimeout(function() {
         changeCenter();
-        initMap();
+        // initMap();
       }, 2000);
     })
   );

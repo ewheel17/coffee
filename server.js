@@ -1,7 +1,11 @@
 const express = require('express');
+const hbs = require('hbs');
+
 var app = express();
 
 var port = process.env.PORT || 8080;
+
+
 
 app.set('view engine');
 app.use(express.static(__dirname + '/public'));
@@ -11,5 +15,5 @@ app.get('/', (req,res) => {
 });
 
 app.listen(port, function(){
-  console.log("App is running on port" + port);
+  console.log("App is running on localhost:" + port);
 });
