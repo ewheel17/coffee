@@ -13,8 +13,16 @@ var theZoom = 13;
 var theRadius = 13 * 300;
 
 
+
 $('#search').on('click', function(){
-  $(".coffee-wrapper").fadeIn(1200);
+  var position = $("#sign-up-section").offset().top;
+  $('html, body').animate({
+    scrollTop: position
+  }, 1200, function(){
+    $("#sign-up-section").fadeOut(0);
+    $(".coffee-wrapper").fadeIn(1200);
+  });
+
     var address = $("#address-input").val().trim();
 
     var settings = {
