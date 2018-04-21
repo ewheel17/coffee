@@ -23,36 +23,88 @@
 <body class="landing">
   <div id="landing-body">
     <header>
-      <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-          <ul class="uk-navbar-nav">
-            <li><a class="logo-text" href="#">Neighborbrew</a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
-            <li><a href="#sign-up-modal" uk-toggle>Sign Up</a></li>
-            <li><a href="#login-modal" uk-toggle>Login</a></li>
-          </ul>
-        </div>
-      </nav>
       <div class="uk-position-relative">
         <div class="uk-position-center uk-text-center overlay">
-          <h1>Neighborbrew<h1>
-          <h3>Finding the coffee you like, when you like it.</h3>
-          <input class="uk-input uk-width-large" id="address-input" type="text" placeholder="Enter your address..." autofocus>
-          <div>
-            <a class="uk-button uk-button-default" id="search">Find Coffee</a>
+          <div class="search-wrapper">
+            <div uk-form-custom>
+              <input class="uk-input uk-width-large" id="preference-input" type="text" placeholder="Where?" autofocus>
+            </div>
+            <button class="uk-button uk-button-primary" id="search">Caffeinate Me!</button>
           </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-checkbox" type="checkbox"> Light Roast</label>
+            <label><input class="uk-checkbox" type="checkbox" checked> Medium Roast</label>
+            <label><input class="uk-checkbox" type="checkbox"> Dark Roast</label>
+            <label><input class="uk-checkbox" type="checkbox" checked> Local Only</label>
+            <label><input class="uk-checkbox" type="checkbox"> Serves Food</label>
+          </div>
+          <h3>Finding the coffee you like, when you like it.</h3>
         </div>
-        <video autoplay loop id=#myVideo>
-            <source src="assets/videos/Double_Espresso.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="assets/videos/Double_Espresso.webm" type="assets/videos/Double_Espresso.webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
+        <img src="assets/images/coffee-cover.jpg" alt="">
+        <div class="uk-position-top">
+          <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+            <div class="uk-navbar-left">
+              <ul class="uk-navbar-nav">
+                <li><a class="logo-text" href="#">Neighborbrew</a></li>
+              </ul>
+            </div>
+            <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav">
+                <li><a href="#sign-up-modal" uk-toggle>Sign Up</a></li>
+                <li><a href="#login-modal" uk-toggle>Login</a></li>
+              </ul>
+            </div>
+        </div>
+        </nav>
+      </div>
+
+      <div>
+        <ul class="uk-align-center coffee-categories">
+          <li>
+            <p>
+              <i class="fas fa-coffee"></i>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-location-arrow"></i>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-user"></i>
+            </p>
+          </li>
+        </ul>
       </div>
     </header>
+
+
     <main>
 
+    <div class="uk-container-expand">
+      <div class="section">
+        <h1 class="uk-heading-line uk-text-center"><span>Your City. Your Coffee.</span></h1>
+      </div>
+    </div>
+
+    <div class="uk-container-expand container-dark">
+      <div class="section">
+        <h1 class="uk-text-center">Get started today!</h1>
+        <div uk-grid>
+          <div class="uk-width-1-2@m"><img class="uk-align-center" src="assets/images/signup.png"></div>
+          <div class="uk-width-1-2@m">
+            <ol>
+              <li>Sign Up.</li>
+              <li>Let us know your style.</li>
+              <li>Get your personalized recommendations.</li>
+          </div>
+      </div>
+
+      </div>
+    </div>
+
+      <div class="coffee-wrapper">
       <div class="uk-container-expand" id="coffee-display">
         <div class="uk-grid-collapse uk-text-center" uk-grid>
           <div class="uk-width-2-3@m">
@@ -70,7 +122,7 @@
           </div>
         </div>
       </div>
-
+    </div>
     </main>
 
     <footer>
@@ -139,10 +191,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
 
   <!-- jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <!-- Custom JS -->
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/app.js"></script>
@@ -151,4 +200,5 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co&libraries=places&callback=initMap" async defer></script>
 
 </body>
+
 </html>

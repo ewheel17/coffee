@@ -1,10 +1,7 @@
-$(document).ready(function(){
-  $("#dashboard-body").delay( 800 ).fadeIn( 400 );
-});
-
-$(document).ready(function(){
-  $("#landing-body").delay( 800 ).fadeIn( 400 );
-});
+/* Snackbar */
+// $('#snackbar').click(function() {
+//    Snackbar.show({text: 'Example notification text.'});
+// });
 
 // Creates a Google Map centered in on SLC.
 var map;
@@ -17,6 +14,7 @@ var theRadius = 13 * 300;
 
 
 $('#search').on('click', function(){
+  $(".coffee-wrapper").fadeIn(1200);
     var address = $("#address-input").val().trim();
 
     var settings = {
@@ -33,10 +31,12 @@ $('#search').on('click', function(){
       initMap()
 
     });
+
+
   });
 
 function initMap() {
-
+        console.log();
   var place = {lat: centerlat, lng: centerlng};
   map = new google.maps.Map(document.getElementById('map'), {
     center: place,
@@ -291,11 +291,6 @@ function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
-      if (results[i].opening_hours.open_now === true) {
-        openClose = 'Open';
-      } else {
-        openClose = 'Closed';
-      }
 
       $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
         <p>${results[i].vicinity}</p>`);
