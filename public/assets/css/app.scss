@@ -60,11 +60,12 @@ footer{
 }
 
 .coffee-list{
+  max-width: 200px;
   background-color: rgba(255,255,255,0.8);
   height: 400px;
   overflow: hidden;
   overflow-y: auto;
-  padding: 10px 40px;
+  padding: 10px 20px;
   z-index: 10;
   position: absolute;
   right: 40px;
@@ -313,7 +314,7 @@ ol li {
 
   ol li{
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   p{
@@ -321,6 +322,24 @@ ol li {
   }
 }
 
+#snackbar{
+  background-color: $snackbar !important;
+      color: #fff !important;
+      font-weight: 300 !important;
+
+  a{
+    text-decoration: none !important;
+    text-transform: uppercase;
+    margin: 20px 0 !important;
+  }
+
+  .message{
+      color: $primary-color !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+  }
+}
 #snackbar-hover{
   display: none;
 }

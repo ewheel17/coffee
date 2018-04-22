@@ -1,10 +1,16 @@
+//Dash Fade In
+$(document).ready(function(){
+  $("#dashboard-body").fadeIn(800);
+  $("#dashboard-header").attr("max-height", "400");
+});
+
 // Snackbar
 $('#snackbar').mouseenter(function(){
-  $("#snackbar-hover").fadeIn(800);
+  $("#snackbar-hover").slideDown(600);
 });
 
 $('#snackbar').mouseleave(function(){
-  $("#snackbar-hover").fadeOut(0);
+  $("#snackbar-hover").slideUp(600);
 });
 
 // Creates a Google Map centered in on SLC.
