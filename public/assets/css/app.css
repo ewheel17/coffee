@@ -143,23 +143,6 @@ footer {
     .coffee-list h5 {
       text-align: center !important; } }
 
-@media screen and (max-width: 575px) {
-  #search {
-    margin-top: 5px; }
-  .uk-input {
-    width: 100%;
-    padding: 10px !important; }
-  .logo-text {
-    font-size: 20px !important; }
-  h1 {
-    font-size: 28px !important;
-    margin: 5px;
-    font-weight: 400; }
-  h3 {
-    font-size: 14px;
-    margin: 5px;
-    font-weight: 400; } }
-
 .search-wrapper {
   padding: 12px;
   border-radius: 5px;
@@ -257,3 +240,37 @@ ol li {
 
 #snackbar-hover {
   display: none; }
+
+@media screen and (max-width: 575px) {
+  header img {
+    display: none; }
+  header .logo-text {
+    color: #000 !important; }
+  header ul li a {
+    color: #000 !important; }
+  header .uk-position-relative {
+    position: inherit !important; }
+  header input {
+    border: 1px solid #eee !important; }
+  .uk-button-primary {
+    margin-top: 5px; } }
+
+.coffee-categories {
+  display: none; }
+
+.uk-input {
+  width: 100%;
+  padding: 10px !important; }
+
+.logo-text {
+  font-size: 20px !important; }
+
+h1 {
+  font-size: 28px !important;
+  margin: 5px;
+  font-weight: 400; }
+
+h3 {
+  font-size: 14px;
+  margin: 5px;
+  font-weight: 400; }
