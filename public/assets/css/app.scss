@@ -8,13 +8,9 @@ html,body,h1,h2,h3,h4,h5,h6,p {
   font-family: 'Lato', sans-serif;
 }
 
-h1,h2,h3 {
-  font-weight: 100;
-}
-
 footer{
-  margin-top: 50px;
-  background-color: #eee;
+  margin-top: 0;
+  background-color: $gray;
   padding: 20px;
 
   p{
@@ -29,9 +25,8 @@ footer{
   display: none;
 }
 
-#search {
-  margin-top: 30px;
-  width: 100%;
+.uk-navbar-nav>li>a {
+  color: #fff;
 }
 
 .search-li {
@@ -46,35 +41,34 @@ footer{
   font-size: 10px;
 }
 
-.uk-button-default {
-  background-color: $coffee-cream;
+.uk-button-primary {
   border: 0;
-  color: $dark-roast;
+  border-radius: 5px;
+  padding: 2px 15px;
+  letter-spacing: 0.7px;
+  font-weight: 300 !important;
 }
 
-.uk-button-default:hover,
-.uk-button-default:focus,
-.uk-button-default:active {
-  background-color: darken($coffee-cream, 20%);
-  transition-duration: 0.3s;
-  color: #000;
-}
 
 .logo-text {
   font-family: 'Share', sans-serif !important;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 40px !important;
-  color: #000 !important;
+  color: #fff !important;
   transform: scale(1, 1.3);
 }
 
 .coffee-list{
-  height: 500px;
+  background-color: rgba(255,255,255,0.8);
+  height: 400px;
   overflow: hidden;
   overflow-y: auto;
-  margin-left: 20px;
-  padding: 20px;
+  padding: 10px 40px;
+  z-index: 10;
+  position: absolute;
+  right: 40px;
+  top: 40px;
 
   h3{
     margin: 0;
@@ -113,6 +107,7 @@ footer{
 
     h1,h3 {
       color: #fff;
+      font-weight: 400;
     }
 
     h1 {
@@ -120,7 +115,6 @@ footer{
     }
 
     .uk-input {
-      padding: 30px 10px;
       border-color: #fff;
       border-radius: 5px;
       color: #999;
@@ -138,15 +132,17 @@ footer{
   .overlay {
     z-index: 10;
     max-width: 100vw;
+
+    label{
+      color: #fff;
+    }
   }
 
   #map {
-    height: 500px;
+    height: 650px;
+    z-index: 1;
   }
 
-  .map-grid{
-    padding: 5px;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -154,6 +150,35 @@ footer{
 }
 
 
+#coffee-display{
+  margin-top: -50px;
+}
+
+.uk-modal{
+  background: rgba(0,0,0,0.8);
+}
+
+.uk-modal-dialog{
+  border-radius: 5px;
+  width: 400px;
+
+  .uk-input {
+    border-color: $primary-color;
+    border-radius: 5px;
+    color: #999;
+    font-weight: 300;
+  }
+
+  img{
+    max-height: 100px;
+  }
+
+}
+
+.password-text{
+  font-size: 10px;
+
+}
 //Media Queries
 @media screen and (min-width: 1920px) {
   video{
@@ -196,4 +221,106 @@ footer{
     margin: 5px;
     font-weight: 400;
   }
+}
+
+.search-wrapper{
+  padding: 12px;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.coffee-wrapper{
+  display: none;
+}
+
+.coffee-categories{
+  list-style: none;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+
+.coffee-categories li{
+  background-color: $gray;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 50px;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.coffee-categories li:hover{
+  color: #fff;
+  background-color: $primary-color;
+  transition-duration: 0.5s;
+}
+
+.coffee-categories li p{
+  margin-top: 25%;
+  font-size: 40px;
+}
+
+.container-dark{
+  background-color: $gray;
+}
+
+.section{
+  padding: 50px;
+
+  .uk-heading-line{
+    margin-top: 50px;
+  }
+}
+
+.section {
+
+  h1{
+    margin-bottom: 60px;
+    font-weight: 300 !important;
+  }
+
+  .spotlight {
+    border-radius: 15px;
+    border: 3px solid $primary-color;
+  }
+}
+
+ol li {
+  font-weight: 300;
+  font-size: 24px;
+  padding: 10px;
+}
+
+
+.container-blue{
+  background-color: $primary-color;
+}
+
+.uk-alert{
+  min-width: 250px;
+  text-align: left;
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 35px 10px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+
+  ol li{
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+#snackbar-hover{
+  display: none;
 }

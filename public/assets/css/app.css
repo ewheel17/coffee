@@ -11,12 +11,9 @@
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
-h1, h2, h3 {
-  font-weight: 100; }
-
 footer {
-  margin-top: 50px;
-  background-color: #eee;
+  margin-top: 0;
+  background-color: #f1f2f6;
   padding: 20px; }
   footer p {
     margin: 0; }
@@ -27,9 +24,8 @@ footer {
 #no-user {
   display: none; }
 
-#search {
-  margin-top: 30px;
-  width: 100%; }
+.uk-navbar-nav > li > a {
+  color: #fff; }
 
 .search-li {
   margin: auto auto auto 20px; }
@@ -39,36 +35,33 @@ footer {
 .copyright {
   font-size: 10px; }
 
-.uk-button-default {
-  background-color: #f5ece1;
+.uk-button-primary {
   border: 0;
-  color: #533a29; }
-
-.uk-button-default:hover,
-.uk-button-default:focus,
-.uk-button-default:active {
-  background-color: #dcbc95;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  color: #000; }
+  border-radius: 5px;
+  padding: 2px 15px;
+  letter-spacing: 0.7px;
+  font-weight: 300 !important; }
 
 .logo-text {
   font-family: 'Share', sans-serif !important;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 40px !important;
-  color: #000 !important;
+  color: #fff !important;
   -webkit-transform: scale(1, 1.3);
   -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
 .coffee-list {
-  height: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 400px;
   overflow: hidden;
   overflow-y: auto;
-  margin-left: 20px;
-  padding: 20px; }
+  padding: 10px 40px;
+  z-index: 10;
+  position: absolute;
+  right: 40px;
+  top: 40px; }
   .coffee-list h3 {
     margin: 0;
     margin-top: 5px;
@@ -95,11 +88,11 @@ footer {
   .landing header {
     max-width: 100%; }
     .landing header h1, .landing header h3 {
-      color: #fff; }
+      color: #fff;
+      font-weight: 400; }
     .landing header h1 {
       font-size: 80px; }
     .landing header .uk-input {
-      padding: 30px 10px;
       border-color: #fff;
       border-radius: 5px;
       color: #999;
@@ -110,13 +103,34 @@ footer {
   .landing .overlay {
     z-index: 10;
     max-width: 100vw; }
+    .landing .overlay label {
+      color: #fff; }
   .landing #map {
-    height: 500px; }
-  .landing .map-grid {
-    padding: 5px; }
+    height: 650px;
+    z-index: 1; }
 
 ::-webkit-scrollbar {
   display: none; }
+
+#coffee-display {
+  margin-top: -50px; }
+
+.uk-modal {
+  background: rgba(0, 0, 0, 0.8); }
+
+.uk-modal-dialog {
+  border-radius: 5px;
+  width: 400px; }
+  .uk-modal-dialog .uk-input {
+    border-color: #1e87f0;
+    border-radius: 5px;
+    color: #999;
+    font-weight: 300; }
+  .uk-modal-dialog img {
+    max-height: 100px; }
+
+.password-text {
+  font-size: 10px; }
 
 @media screen and (min-width: 1920px) {
   video {
@@ -144,3 +158,87 @@ footer {
     font-size: 14px;
     margin: 5px;
     font-weight: 400; } }
+
+.search-wrapper {
+  padding: 12px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.coffee-wrapper {
+  display: none; }
+
+.coffee-categories {
+  list-style: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  text-align: center; }
+
+.coffee-categories li {
+  background-color: #f1f2f6;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 50px;
+  display: inline-block;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.coffee-categories li:hover {
+  color: #fff;
+  background-color: #1e87f0;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+
+.coffee-categories li p {
+  margin-top: 25%;
+  font-size: 40px; }
+
+.container-dark {
+  background-color: #f1f2f6; }
+
+.section {
+  padding: 50px; }
+  .section .uk-heading-line {
+    margin-top: 50px; }
+
+.section h1 {
+  margin-bottom: 60px;
+  font-weight: 300 !important; }
+
+.section .spotlight {
+  border-radius: 15px;
+  border: 3px solid #1e87f0; }
+
+ol li {
+  font-weight: 300;
+  font-size: 24px;
+  padding: 10px; }
+
+.container-blue {
+  background-color: #1e87f0; }
+
+.uk-alert {
+  min-width: 250px;
+  text-align: left;
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 35px 10px 15px;
+  font-size: 12px;
+  border-radius: 5px; }
+  .uk-alert ol li {
+    font-size: 12px;
+    font-weight: 400; }
+  .uk-alert p {
+    margin: 0; }
+
+#snackbar-hover {
+  display: none; }
