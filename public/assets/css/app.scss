@@ -9,7 +9,7 @@ html,body,h1,h2,h3,h4,h5,h6,p {
 }
 
 footer{
-  margin-top: 50px;
+  margin-top: 0;
   background-color: $gray;
   padding: 20px;
 
@@ -154,6 +154,31 @@ footer{
   margin-top: -50px;
 }
 
+.uk-modal{
+  background: rgba(0,0,0,0.8);
+}
+
+.uk-modal-dialog{
+  border-radius: 5px;
+  width: 400px;
+
+  .uk-input {
+    border-color: $primary-color;
+    border-radius: 5px;
+    color: #999;
+    font-weight: 300;
+  }
+
+  img{
+    max-height: 100px;
+  }
+
+}
+
+.password-text{
+  font-size: 10px;
+
+}
 //Media Queries
 @media screen and (min-width: 1920px) {
   video{
@@ -266,11 +291,36 @@ footer{
 
 ol li {
   font-weight: 300;
-  font-size: 30px;
+  font-size: 24px;
   padding: 10px;
 }
 
 
 .container-blue{
   background-color: $primary-color;
+}
+
+.uk-alert{
+  min-width: 250px;
+  text-align: left;
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 35px 10px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+
+  ol li{
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+#snackbar-hover{
+  display: none;
 }
