@@ -133,16 +133,6 @@ footer {
 .password-text {
   font-size: 10px; }
 
-@media screen and (min-width: 1920px) {
-  video {
-    width: 100vw; } }
-
-@media screen and (max-width: 959px) {
-  .coffee-list {
-    margin: 5px auto; }
-    .coffee-list h5 {
-      text-align: center !important; } }
-
 .search-wrapper {
   padding: 12px;
   border-radius: 5px;
@@ -259,7 +249,6 @@ ol li {
   display: none; }
 
 .uk-input {
-  width: 100%;
   padding: 10px !important; }
 
 .logo-text {
