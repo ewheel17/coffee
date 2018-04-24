@@ -55,7 +55,6 @@ $(document).ready(function(){
     });
   
   function initMap() {
-          console.log();
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
       center: place,
@@ -309,8 +308,9 @@ $(document).ready(function(){
       theRadius = 591657550.5;
   
       for (var i = 1;i < theZoom;i++) {
-          theRadius = theRadius / 2;
+          theRadius = theRadius / 2 - 2000;
       }
+      console.log(theRadius);
   }
   
   // $(document).ready(function() {
@@ -335,6 +335,4 @@ $(document).ready(function(){
       changeCenter();
       calibrateRadius();
       initMap();
-      console.log(theRadius);
-      console.log(theZoom);
   })
