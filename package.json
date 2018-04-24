@@ -2,7 +2,7 @@
   "name": "heroku-node",
   "version": "1.0.0",
   "description": "Our sample Node to Heroku app",
-  "main": "server.js",
+  "main": "server/server.js",
   "engines": {
     "node": "9.x.x"
   },
@@ -17,9 +17,24 @@
   },
   "homepage": "https://github.com/MadManta/coffee#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.1",
     "express": "^4.9.8",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.1.2",
     "hbs": "^4.0.1",
-    "passport": "^0.4.0"
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.6"
   },
   "scripts": {
     "start": "node server.js"
