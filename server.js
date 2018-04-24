@@ -1,19 +1,62 @@
-const express = require('express');
-const hbs = require('hbs');
+var express = require('express');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
-var port = process.env.PORT || 8080;
+var passport = require('passport');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var env = require('dotenv').load();
+var exphbs = require('express-handlebars');
 
 
-
-app.set('view engine');
+//Set Static Directory
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req,res) => {
-  res.render('index.html');
+//For BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//For passport
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized:true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/', function(req,res) {
+  res.render('./index');
 });
 
-app.listen(port, function(){
-  console.log("App is running on localhost:" + port);
+//Models
+var models = require("./app/models");
+
+//Sync Database
+models.sequelize.sync().then(function() {
+
+    console.log('Nice! Database looks fine')
+
+}).catch(function(err) {
+
+    console.log(err, "Something went wrong with the Database Update!")
+
+});
+
+//For handlebars
+app.set('views', './app/views');
+app.engine('hbs', exphbs({
+  extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+
+//Routes
+var authRoute = require('./app/routes/auth.js')(app, passport);
+
+//Load passport strategies
+require('./app/config/passport/passport.js')(passport, models.user);
+
+
+app.listen(port, function(err){
+
+  if (!err)
+    console.log(`App is running on localhost: ${port}...`);
+  else console.log(err)
 });
