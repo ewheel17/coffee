@@ -1,8 +1,8 @@
 {
   "name": "heroku-node",
   "version": "1.0.0",
-  "description": "Our sample Node to Heroku app",
-  "main": "server/server.js",
+  "description": "Neighborbrew",
+  "main": "server.js",
   "engines": {
     "node": "9.x.x"
   },

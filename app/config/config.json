@@ -30,13 +30,13 @@
 
     "production": {
 
-        "username": "",
+        "username": "b165051637001d",
 
-        "password": null,
+        "password": "8064579b",
 
-        "database": "",
+        "database": "heroku_4c1ded3c4751ee5",
 
-        "host": "127.0.0.1",
+        "host": "us-cdbr-iron-east-05.cleardb.net",
 
         "dialect": "mysql"
 
