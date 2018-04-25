@@ -335,3 +335,9 @@ $(document).ready(function(){
   function deg2rad(deg) {
     return deg * (Math.PI/180)
   }
+
+/********* Refresh Search Button *********/
+  $('#refresh-button').on('click', () => {
+   changeCenter();
+   initMap();
+  })
