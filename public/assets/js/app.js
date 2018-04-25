@@ -32,7 +32,9 @@ $(document).ready(function(){
   var theZoom = 13;
   var theRadius = 13 * 300;
 
-
+  $('#search-dash').on('click', function(){
+    $(".coffee-wrapper").fadeIn();
+  });
 
   $('#search').on('click', function(){
     var position = $("#sign-up-section").offset().top -50;
@@ -64,7 +66,8 @@ $(document).ready(function(){
 
     });
 
-  // Initializes the Map display. 
+
+  // Initializes the Map display.
   function initMap() {
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
@@ -297,7 +300,7 @@ $(document).ready(function(){
       }
     }
   }
-  
+
   // Creates a marker at an inputed location pulled from the google maps search.
   function createMarker(place) {
     var placeLoc = place.geometry.location;
@@ -319,7 +322,7 @@ $(document).ready(function(){
       });
 
   }
-  
+
   // Changes the saved center and zoom variables based on the User changes.
   function changeCenter() {
       centerlat = map.getCenter().lat();
@@ -327,11 +330,13 @@ $(document).ready(function(){
       theZoom = map.getZoom();
   }
 
+
   /********* Refresh Search Button *********/
   $('#refresh-button').on('click', () => {
     changeCenter();
     initMap();
   })
+
 
   // Determines distance based on Lat-Lng of viewport.
   function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
