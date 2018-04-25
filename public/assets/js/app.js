@@ -262,6 +262,17 @@ $(document).ready(function(){
       radius: theRadius,
       keyword: ['local', 'coffee', 'shops']
     }, callback);
+
+    google.maps.event.addListener(map, "zoom_changed", () => {
+        var bounds = map.getBounds();
+        var lat1 = {lat: bounds.b.b, lon: bounds.f.b}
+        var lat2 = {lat: bounds.b.f, lon: bounds.f.f}
+
+        theRadius = (getDistanceFromLatLonInKm(bounds.b.b, bounds.f.b, bounds.b.f, bounds.f.f) * 1000) / 6;
+        console.log(theRadius);
+    });
+
+
   }
   
   function callback(results, status) {
@@ -299,8 +310,8 @@ $(document).ready(function(){
   }
   
   function changeCenter() {
-      centerlng = map.getCenter().lng();
       centerlat = map.getCenter().lat();
+      centerlng = map.getCenter().lng();
       theZoom = map.getZoom();
   }
   
@@ -308,7 +319,7 @@ $(document).ready(function(){
       theRadius = 591657550.5;
   
       for (var i = 1;i < theZoom;i++) {
-          theRadius = theRadius / 2 - 2000;
+          theRadius = theRadius / 2 - (6000 / theZoom);
       }
       console.log(theRadius);
   }
@@ -332,7 +343,25 @@ $(document).ready(function(){
   
   /********* Refresh Search Button *********/
   $('#refresh-button').on('click', () => {
-      changeCenter();
-      calibrateRadius();
-      initMap();
+    changeCenter();
+    initMap();
   })
+
+
+  function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    var dLon = deg2rad(lon2-lon1); 
+    var a = 
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+      Math.sin(dLon/2) * Math.sin(dLon/2)
+      ; 
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    var d = R * c; // Distance in km
+    return d;
+  }
+  
+  function deg2rad(deg) {
+    return deg * (Math.PI/180)
+  }
