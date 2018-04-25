@@ -54,6 +54,7 @@ $(document).ready(function(){
   
     });
   
+  // Initializes the Map display. 
   function initMap() {
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
@@ -263,11 +264,9 @@ $(document).ready(function(){
       keyword: ['local', 'coffee', 'shops']
     }, callback);
 
+    // Changes lat-lng and ultimately the radius based on User zooming.
     google.maps.event.addListener(map, "zoom_changed", () => {
         var bounds = map.getBounds();
-        var lat1 = {lat: bounds.b.b, lon: bounds.f.b}
-        var lat2 = {lat: bounds.b.f, lon: bounds.f.f}
-
         theRadius = (getDistanceFromLatLonInKm(bounds.b.b, bounds.f.b, bounds.b.f, bounds.f.f) * 1000) / 6;
         console.log(theRadius);
     });
@@ -275,6 +274,7 @@ $(document).ready(function(){
 
   }
   
+  // Loops through the google maps array to generate the requested markers.
   function callback(results, status) {
     var openClose;
   
@@ -288,6 +288,7 @@ $(document).ready(function(){
     }
   }
   
+  // Creates a marker at an inputed location pulled from the google maps search.
   function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -309,45 +310,14 @@ $(document).ready(function(){
   
   }
   
+  // Changes the saved center and zoom variables based on the User changes.
   function changeCenter() {
       centerlat = map.getCenter().lat();
       centerlng = map.getCenter().lng();
       theZoom = map.getZoom();
   }
-  
-  function calibrateRadius() {
-      theRadius = 591657550.5;
-  
-      for (var i = 1;i < theZoom;i++) {
-          theRadius = theRadius / 2 - (6000 / theZoom);
-      }
-      console.log(theRadius);
-  }
-  
-  // $(document).ready(function() {
-  //   boundListenerArray.push(google.maps.event.addListener(map, "bounds_changed", function() {
-  //       if (boundListenerArray.length > 1) {
-  //         google.maps.event.removeListener(
-  //           boundListenerArray[boundListenerArray.length - 1]
-  //         );
-  //       }
-  
-  //       setTimeout(function() {
-  //         changeCenter();
-  //         // initMap();
-  //       }, 2000);
-  //     })
-  //   );
-  // });
-  
-  
-  /********* Refresh Search Button *********/
-  $('#refresh-button').on('click', () => {
-    changeCenter();
-    initMap();
-  })
 
-
+  // Determines distance based on Lat-Lng of viewport.
   function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
