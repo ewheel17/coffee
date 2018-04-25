@@ -18,6 +18,12 @@ exports.dashboard = function(req, res) {
 
 }
 
+exports.account = function(req, res) {
+
+    res.render('account');
+
+}
+
 exports.logout = function(req, res) {
 
     req.session.destroy(function(err) {
