@@ -63,7 +63,12 @@ $(document).ready(function(){
 
 
     });
+<<<<<<< HEAD
+  
+  // Initializes the Map display. 
+=======
 
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function initMap() {
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
@@ -273,18 +278,21 @@ $(document).ready(function(){
       keyword: ['local', 'coffee', 'shops']
     }, callback);
 
+    // Changes lat-lng and ultimately the radius based on User zooming.
     google.maps.event.addListener(map, "zoom_changed", () => {
         var bounds = map.getBounds();
-        var lat1 = {lat: bounds.b.b, lon: bounds.f.b}
-        var lat2 = {lat: bounds.b.f, lon: bounds.f.f}
-
         theRadius = (getDistanceFromLatLonInKm(bounds.b.b, bounds.f.b, bounds.b.f, bounds.f.f) * 1000) / 6;
         console.log(theRadius);
     });
 
 
   }
+<<<<<<< HEAD
+  
+  // Loops through the google maps array to generate the requested markers.
+=======
 
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function callback(results, status) {
     var openClose;
 
@@ -297,7 +305,12 @@ $(document).ready(function(){
       }
     }
   }
+<<<<<<< HEAD
+  
+  // Creates a marker at an inputed location pulled from the google maps search.
+=======
 
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -318,12 +331,19 @@ $(document).ready(function(){
       });
 
   }
+<<<<<<< HEAD
+  
+  // Changes the saved center and zoom variables based on the User changes.
+=======
 
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function changeCenter() {
       centerlat = map.getCenter().lat();
       centerlng = map.getCenter().lng();
       theZoom = map.getZoom();
   }
+<<<<<<< HEAD
+=======
 
   function calibrateRadius() {
       theRadius = 591657550.5;
@@ -357,7 +377,9 @@ $(document).ready(function(){
     initMap();
   })
 
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
 
+  // Determines distance based on Lat-Lng of viewport.
   function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
@@ -375,3 +397,12 @@ $(document).ready(function(){
   function deg2rad(deg) {
     return deg * (Math.PI/180)
   }
+<<<<<<< HEAD
+
+/********* Refresh Search Button *********/
+  $('#refresh-button').on('click', () => {
+   changeCenter();
+   initMap();
+  })
+=======
+>>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
