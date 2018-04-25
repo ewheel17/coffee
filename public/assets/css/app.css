@@ -62,7 +62,7 @@ footer {
   z-index: 10;
   position: absolute;
   right: 40px;
-  top: 40px; }
+  top: 10px; }
   .coffee-list h3 {
     margin: 0;
     margin-top: 5px;
@@ -107,7 +107,7 @@ footer {
     .landing .overlay label {
       color: #fff; }
   .landing #map {
-    height: 650px;
+    height: 100vh;
     z-index: 1; }
 
 ::-webkit-scrollbar {
@@ -221,7 +221,7 @@ ol li {
   #snackbar a {
     text-decoration: none !important;
     text-transform: uppercase;
-    margin: 20px 0 !important; }
+    margin: 5px; }
   #snackbar .message {
     color: #1e87f0 !important;
     font-weight: 700 !important;
@@ -263,3 +263,16 @@ h3 {
   font-size: 14px;
   margin: 5px;
   font-weight: 400; }
+
+.uk-button-default {
+  background-color: #fff;
+  opacity: 0.8; }
+
+#refresh-button {
+  z-index: 10;
+  position: absolute;
+  left: 40%;
+  top: 10px; }
+
+.uk-alert-close {
+  position: inherit; }
