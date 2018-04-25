@@ -143,7 +143,6 @@ footer{
     height: 100vh;
     z-index: 1;
   }
-
 }
 
 ::-webkit-scrollbar {
@@ -380,4 +379,8 @@ ol li {
 
 .uk-alert-close{
   position: inherit;
+}
+
+.dash-header{
+  margin-top: 30px;
 }

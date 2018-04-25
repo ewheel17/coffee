@@ -32,7 +32,9 @@ $(document).ready(function(){
   var theZoom = 13;
   var theRadius = 13 * 300;
 
-
+  $('#search-dash').on('click', function(){
+    $(".coffee-wrapper").fadeIn();
+  });
 
   $('#search').on('click', function(){
     var position = $("#sign-up-section").offset().top -50;

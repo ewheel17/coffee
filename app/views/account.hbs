@@ -21,9 +21,8 @@
 </head>
 
 <body class="landing">
-  <div id="dashboard-body">
 
-    <header id="dashboard-header">
+    <header>
         <img src="assets/images/coffee-cover_small.jpg" alt="">
         <div class="uk-position-top">
           <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
@@ -34,66 +33,17 @@
             </div>
             <div class="uk-navbar-right">
               <ul class="uk-navbar-nav">
-                <li><a href="/account">Account</a></li>
+                <li><a href="/dashboard">Back to Dashboard</a></li>
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </div>
-          </nav>
         </div>
+        </nav>
     </header>
 
 
     <main>
-      <div uk-grid>
-
-        <div class="uk-width-1-5">
-          <div class="uk-container">
-            <h2 class="dash-header"> Welcome! </h2>
-            <h3> Search your coffee: </h3>
-          <div uk-form-custom>
-            <input class="uk-input uk-width-large" id="preference-input" type="text" placeholder="Where?" autofocus>
-            <button class="uk-button uk-button-primary uk-width-1-1" id="search-dash">Caffeinate Me!</button>
-          </div>
-          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <h3> Preferences: </h3>
-            <label><input class="uk-checkbox" type="checkbox"> Light Roast</label>
-            <label><input class="uk-checkbox" type="checkbox" checked> Medium Roast</label>
-            <label><input class="uk-checkbox" type="checkbox"> Dark Roast</label>
-            <label><input class="uk-checkbox" type="checkbox" checked> Local Only</label>
-            <label><input class="uk-checkbox" type="checkbox"> Serves Food</label>
-          </div>
-
-                <hr class="uk-divider-icon">
-
-          <h2 class="dash-header"> Your Coffee Profile </h2>
-            <ul>
-              <li>Profile Item</li>
-              <li>Profile Item</li>
-              <li>Profile Item</li>
-              <li>Profile Item</li>
-              <li>Profile Item</li>
-            </ul>
-
-        </div>
-      </div>
-
-
-        <div class="uk-width-4-5">
-          <div class="uk-position-relative">
-          <div class="uk-container-expand">
-            <div class="uk-grid-collapse uk-text-center" uk-grid>
-              <div class="uk-width-1">
-                <div class="coffee-list" id="coffee-list">
-                  <h5>Results:</h5>
-                </div>
-                  <div id="map"></div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-
+      <h1> Account Settings </h1>
     </main>
 
     <footer>
@@ -104,7 +54,6 @@
       </div>
     </footer>
 
-  </div>
 
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
