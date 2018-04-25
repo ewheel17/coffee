@@ -287,9 +287,7 @@ $(document).ready(function(){
 
   }
 
-
   // Loops through the google maps array to generate the requested markers.
-
   function callback(results, status) {
     var openClose;
 
@@ -303,9 +301,7 @@ $(document).ready(function(){
     }
   }
 
-
   // Creates a marker at an inputed location pulled from the google maps search.
-
   function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -328,7 +324,6 @@ $(document).ready(function(){
   }
 
   // Changes the saved center and zoom variables based on the User changes.
-
   function changeCenter() {
       centerlat = map.getCenter().lat();
       centerlng = map.getCenter().lng();
@@ -336,38 +331,11 @@ $(document).ready(function(){
   }
 
 
-  function calibrateRadius() {
-      theRadius = 591657550.5;
-
-      for (var i = 1;i < theZoom;i++) {
-          theRadius = theRadius / 2 - (6000 / theZoom);
-      }
-      console.log(theRadius);
-  }
-
-  // $(document).ready(function() {
-  //   boundListenerArray.push(google.maps.event.addListener(map, "bounds_changed", function() {
-  //       if (boundListenerArray.length > 1) {
-  //         google.maps.event.removeListener(
-  //           boundListenerArray[boundListenerArray.length - 1]
-  //         );
-  //       }
-
-  //       setTimeout(function() {
-  //         changeCenter();
-  //         // initMap();
-  //       }, 2000);
-  //     })
-  //   );
-  // });
-
-
   /********* Refresh Search Button *********/
   $('#refresh-button').on('click', () => {
     changeCenter();
     initMap();
   })
-
 
 
   // Determines distance based on Lat-Lng of viewport.
@@ -388,10 +356,3 @@ $(document).ready(function(){
   function deg2rad(deg) {
     return deg * (Math.PI/180)
   }
-
-
-/********* Refresh Search Button *********/
-  $('#refresh-button').on('click', () => {
-   changeCenter();
-   initMap();
-  })
