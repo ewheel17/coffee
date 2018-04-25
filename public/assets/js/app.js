@@ -1,18 +1,28 @@
+
+
+
+
 //Dash Fade In
 $(document).ready(function(){
     $("#dashboard-body").fadeIn(800);
     $("#dashboard-header").attr("max-height", "400");
   });
-  
+
   // Snackbar
   $('#snackbar').mouseenter(function(){
     $("#snackbar-hover").slideDown(600);
   });
-  
+
   $('#snackbar').mouseleave(function(){
     $("#snackbar-hover").slideUp(600);
   });
-  
+
+  $('#close-snackbar').on('click', function(){
+    var element = $("#snackbar");
+    UIkit.alert(element).close();
+  })
+
+
   // Creates a Google Map centered in on SLC.
   var map;
   var infowindow;
@@ -21,39 +31,39 @@ $(document).ready(function(){
   var centerlng = -111.885752;
   var theZoom = 13;
   var theRadius = 13 * 300;
-  
-  
-  
+
+
+
   $('#search').on('click', function(){
-    var position = $("#sign-up-section").offset().top;
+    var position = $("#sign-up-section").offset().top -50;
     $('html, body').animate({
       scrollTop: position
-    }, 1200, function(){
+    }, 400, function(){
       $("#sign-up-section").fadeOut();
       $("#card-section").fadeOut();
-      $(".coffee-wrapper").fadeIn(2000);
+      $(".coffee-wrapper").fadeIn();
     });
-  
+
       var address = $("#address-input").val().trim();
-  
+
       var settings = {
         "async": true,
         "crossDomain": true,
         "url": "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co",
         "method": "POST"
       }
-  
+
       $.ajax(settings).done(function (response) {
         centerlat = response.results[0].geometry.location.lat;
         centerlng = response.results[0].geometry.location.lng;
         $('#coffee-list').html("");
         initMap()
-  
+
       });
-  
-  
+
+
     });
-  
+
   function initMap() {
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
@@ -254,7 +264,7 @@ $(document).ready(function(){
       }
   ]
     });
-  
+
     infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
@@ -274,20 +284,20 @@ $(document).ready(function(){
 
 
   }
-  
+
   function callback(results, status) {
     var openClose;
-  
+
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]);
-  
+
         $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
           <p>${results[i].vicinity}</p>`);
       }
     }
   }
-  
+
   function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -299,31 +309,31 @@ $(document).ready(function(){
       marker.addListener('click', function() {
            infowindow.open(map, marker);
          });
-  
+
       google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>`+
       `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>
       `);
       infowindow.open(map, this);
       });
-  
+
   }
-  
+
   function changeCenter() {
       centerlat = map.getCenter().lat();
       centerlng = map.getCenter().lng();
       theZoom = map.getZoom();
   }
-  
+
   function calibrateRadius() {
       theRadius = 591657550.5;
-  
+
       for (var i = 1;i < theZoom;i++) {
           theRadius = theRadius / 2 - (6000 / theZoom);
       }
       console.log(theRadius);
   }
-  
+
   // $(document).ready(function() {
   //   boundListenerArray.push(google.maps.event.addListener(map, "bounds_changed", function() {
   //       if (boundListenerArray.length > 1) {
@@ -331,7 +341,7 @@ $(document).ready(function(){
   //           boundListenerArray[boundListenerArray.length - 1]
   //         );
   //       }
-  
+
   //       setTimeout(function() {
   //         changeCenter();
   //         // initMap();
@@ -339,8 +349,8 @@ $(document).ready(function(){
   //     })
   //   );
   // });
-  
-  
+
+
   /********* Refresh Search Button *********/
   $('#refresh-button').on('click', () => {
     changeCenter();
@@ -351,17 +361,17 @@ $(document).ready(function(){
   function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
-    var dLon = deg2rad(lon2-lon1); 
-    var a = 
+    var dLon = deg2rad(lon2-lon1);
+    var a =
       Math.sin(dLat/2) * Math.sin(dLat/2) +
-      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
       Math.sin(dLon/2) * Math.sin(dLon/2)
-      ; 
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c; // Distance in km
     return d;
   }
-  
+
   function deg2rad(deg) {
     return deg * (Math.PI/180)
   }
