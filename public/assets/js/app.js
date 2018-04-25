@@ -63,12 +63,8 @@ $(document).ready(function(){
 
 
     });
-<<<<<<< HEAD
-  
-  // Initializes the Map display. 
-=======
 
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
+  // Initializes the Map display. 
   function initMap() {
     var place = {lat: centerlat, lng: centerlng};
     map = new google.maps.Map(document.getElementById('map'), {
@@ -287,12 +283,8 @@ $(document).ready(function(){
 
 
   }
-<<<<<<< HEAD
-  
-  // Loops through the google maps array to generate the requested markers.
-=======
 
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
+  // Loops through the google maps array to generate the requested markers.
   function callback(results, status) {
     var openClose;
 
@@ -305,12 +297,8 @@ $(document).ready(function(){
       }
     }
   }
-<<<<<<< HEAD
   
   // Creates a marker at an inputed location pulled from the google maps search.
-=======
-
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -331,53 +319,19 @@ $(document).ready(function(){
       });
 
   }
-<<<<<<< HEAD
   
   // Changes the saved center and zoom variables based on the User changes.
-=======
-
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
   function changeCenter() {
       centerlat = map.getCenter().lat();
       centerlng = map.getCenter().lng();
       theZoom = map.getZoom();
   }
-<<<<<<< HEAD
-=======
-
-  function calibrateRadius() {
-      theRadius = 591657550.5;
-
-      for (var i = 1;i < theZoom;i++) {
-          theRadius = theRadius / 2 - (6000 / theZoom);
-      }
-      console.log(theRadius);
-  }
-
-  // $(document).ready(function() {
-  //   boundListenerArray.push(google.maps.event.addListener(map, "bounds_changed", function() {
-  //       if (boundListenerArray.length > 1) {
-  //         google.maps.event.removeListener(
-  //           boundListenerArray[boundListenerArray.length - 1]
-  //         );
-  //       }
-
-  //       setTimeout(function() {
-  //         changeCenter();
-  //         // initMap();
-  //       }, 2000);
-  //     })
-  //   );
-  // });
-
 
   /********* Refresh Search Button *********/
   $('#refresh-button').on('click', () => {
     changeCenter();
     initMap();
   })
-
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
 
   // Determines distance based on Lat-Lng of viewport.
   function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
@@ -397,12 +351,3 @@ $(document).ready(function(){
   function deg2rad(deg) {
     return deg * (Math.PI/180)
   }
-<<<<<<< HEAD
-
-/********* Refresh Search Button *********/
-  $('#refresh-button').on('click', () => {
-   changeCenter();
-   initMap();
-  })
-=======
->>>>>>> b096d05b7a0450ce05b6ec50b329ab9c28b7c2b2
