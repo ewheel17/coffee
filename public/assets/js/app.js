@@ -3,24 +3,26 @@
 
 
 //Dash Fade In
-$(document).ready(function(){
+$(document).ready(() => {
     $("#dashboard-body").fadeIn(800);
     $("#dashboard-header").attr("max-height", "400");
   });
 
   // Snackbar
-  $('#snackbar').mouseenter(function(){
+  $('#snackbar').mouseenter(() => {
     $("#snackbar-hover").slideDown(600);
   });
 
-  $('#snackbar').mouseleave(function(){
+  $('#snackbar').mouseleave(() => {
     $("#snackbar-hover").slideUp(600);
   });
 
-  $('#close-snackbar').on('click', function(){
+  $('#close-snackbar').on('click', () => {
     var element = $("#snackbar");
     UIkit.alert(element).close();
   })
+
+  $('#coffee-display').hide();
 
 
   // Creates a Google Map centered in on SLC.
@@ -32,18 +34,18 @@ $(document).ready(function(){
   var theZoom = 13;
   var theRadius = 13 * 300;
 
-  $('#search-dash').on('click', function(){
-    $(".coffee-wrapper").fadeIn();
+  $('#search-dash').on('click', () => {
+    $(".coffee-wrapper-dash").fadeIn();
   });
 
-  $('#search').on('click', function(){
+  $('#search').on('click', () => {
     var position = $("#sign-up-section").offset().top -50;
     $('html, body').animate({
       scrollTop: position
-    }, 400, function(){
+    }, 400, () => {
       $("#sign-up-section").fadeOut();
       $("#card-section").fadeOut();
-      $(".coffee-wrapper").fadeIn();
+      $("#coffee-display").fadeIn();
     });
 
       var address = $("#address-input").val().trim();
@@ -55,7 +57,7 @@ $(document).ready(function(){
         "method": "POST"
       }
 
-      $.ajax(settings).done(function (response) {
+      $.ajax(settings).done(response => {
         centerlat = response.results[0].geometry.location.lat;
         centerlng = response.results[0].geometry.location.lng;
         $('#coffee-list').html("");
@@ -303,12 +305,10 @@ $(document).ready(function(){
       }
     }
 
-    console.log(currentList);
-
+    // When a list item is clicked, the description appears above the associated marker.
     $(".coffeeListSelect").on("click", event => {
       var elementPos = currentList.map(x => {return x.place_id; }).indexOf(event.currentTarget.id);
       var objectFound = currentList[elementPos];
-      console.log(objectFound);
       createMarker(objectFound, true);
     });
   }
@@ -316,24 +316,17 @@ $(document).ready(function(){
   // Creates a marker at an inputed location pulled from the google maps search.
   function createMarker(place, listClick) {
     var placeLoc = place.geometry.location;
-    if (listClick) {
-        var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
-            title: place.name
-        });
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        title: place.name
+    });
 
+    if (listClick) {
         infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
         infowindow.open(map, marker);
- 
-    } else {
-        var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
-            title: place.name,
-            animation: google.maps.Animation.DROP
-        });
 
+    } else {
         marker.addListener('click', () => {
             infowindow.open(map, marker);
         });
