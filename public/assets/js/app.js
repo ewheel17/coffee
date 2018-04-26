@@ -281,46 +281,68 @@ $(document).ready(function(){
     google.maps.event.addListener(map, "zoom_changed", () => {
         var bounds = map.getBounds();
         theRadius = (getDistanceFromLatLonInKm(bounds.b.b, bounds.f.b, bounds.b.f, bounds.f.f) * 1000) / 6;
-        console.log(theRadius);
     });
 
 
   }
 
   // Loops through the google maps array to generate the requested markers.
+  var currentList = [];
   function callback(results, status) {
     var openClose;
+    currentList = [];
 
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+      $("#coffee-list").html("");
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]);
+        currentList.push(results[i]);
 
-        $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
+        $("#coffee-list").append(`<a class="coffeeListSelect" id='${results[i].place_id}'><h3>${results[i].name}</h3></a><p>Rating: ${results[i].rating} | ${openClose}</p>
           <p>${results[i].vicinity}</p>`);
       }
     }
+
+    console.log(currentList);
+
+    $(".coffeeListSelect").on("click", event => {
+      var elementPos = currentList.map(x => {return x.place_id; }).indexOf(event.currentTarget.id);
+      var objectFound = currentList[elementPos];
+      console.log(objectFound);
+      createMarker(objectFound, true);
+    });
   }
 
   // Creates a marker at an inputed location pulled from the google maps search.
-  function createMarker(place) {
+  function createMarker(place, listClick) {
     var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-      title: place.name,
-      animation: google.maps.Animation.DROP
-      });
-      marker.addListener('click', function() {
-           infowindow.open(map, marker);
-         });
+    if (listClick) {
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            title: place.name
+        });
 
-      google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>`+
-      `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>
-      `);
-      infowindow.open(map, this);
-      });
+        infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
+        infowindow.open(map, marker);
+ 
+    } else {
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            title: place.name,
+            animation: google.maps.Animation.DROP
+        });
 
+        marker.addListener('click', () => {
+            infowindow.open(map, marker);
+        });
+
+        google.maps.event.addListener(marker, "click", () => {
+            infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
+            infowindow.open(map, this);
+        });  
+    } 
   }
 
   // Changes the saved center and zoom variables based on the User changes.
