@@ -7,7 +7,6 @@
     text-align: center !important; }
   .coffee-list img {
     display: inline !important; } }
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
@@ -48,8 +47,6 @@ footer {
   font-weight: 700;
   font-size: 40px !important;
   color: #fff !important;
-  -webkit-transform: scale(1, 1.3);
-  -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
 .coffee-list {
@@ -143,8 +140,6 @@ footer {
 
 .coffee-categories {
   list-style: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
   left: 0px;
@@ -159,15 +154,12 @@ footer {
   padding: 5px;
   margin: 50px;
   display: inline-block;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .coffee-categories li:hover {
   color: #fff;
   background-color: #1e87f0;
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
   transition-duration: 0.5s; }
 
 .coffee-categories li p {
@@ -185,7 +177,6 @@ footer {
 .section h1 {
   margin-bottom: 60px;
   font-weight: 300 !important; }
-
 .section .spotlight {
   border-radius: 15px;
   border: 3px solid #1e87f0; }
@@ -242,9 +233,9 @@ ol li {
     position: inherit !important; }
   header input {
     border: 1px solid #eee !important; }
+
   .uk-button-primary {
     margin-top: 5px; } }
-
 .coffee-categories {
   display: none; }
 
@@ -279,3 +270,14 @@ h3 {
 
 .dash-header {
   margin-top: 30px; }
+
+#sign-body {
+  height: 100vh;
+  z-index: 10;
+  background: #dba75b; }
+  #sign-body .uk-flex-container {
+    height: 100vh; }
+  #sign-body #sign-form {
+    height: 100vh; }
+
+/*# sourceMappingURL=app.css.map */

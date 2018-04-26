@@ -3,24 +3,26 @@
 
 
 //Dash Fade In
-$(document).ready(function(){
+$(document).ready(() => {
     $("#dashboard-body").fadeIn(800);
     $("#dashboard-header").attr("max-height", "400");
   });
 
   // Snackbar
-  $('#snackbar').mouseenter(function(){
+  $('#snackbar').mouseenter(() => {
     $("#snackbar-hover").slideDown(600);
   });
 
-  $('#snackbar').mouseleave(function(){
+  $('#snackbar').mouseleave(() => {
     $("#snackbar-hover").slideUp(600);
   });
 
-  $('#close-snackbar').on('click', function(){
+  $('#close-snackbar').on('click', () => {
     var element = $("#snackbar");
     UIkit.alert(element).close();
   })
+
+  $('#coffee-display').hide();
 
 
   // Creates a Google Map centered in on SLC.
@@ -32,18 +34,18 @@ $(document).ready(function(){
   var theZoom = 13;
   var theRadius = 13 * 300;
 
-  $('#search-dash').on('click', function(){
-    $(".coffee-wrapper").fadeIn();
+  $('#search-dash').on('click', () => {
+    $(".coffee-wrapper-dash").fadeIn();
   });
 
-  $('#search').on('click', function(){
+  $('#search').on('click', () => {
     var position = $("#sign-up-section").offset().top -50;
     $('html, body').animate({
       scrollTop: position
-    }, 400, function(){
+    }, 400, () => {
       $("#sign-up-section").fadeOut();
       $("#card-section").fadeOut();
-      $(".coffee-wrapper").fadeIn();
+      $("#coffee-display").fadeIn();
     });
 
       var address = $("#address-input").val().trim();
@@ -55,7 +57,7 @@ $(document).ready(function(){
         "method": "POST"
       }
 
-      $.ajax(settings).done(function (response) {
+      $.ajax(settings).done(response => {
         centerlat = response.results[0].geometry.location.lat;
         centerlng = response.results[0].geometry.location.lng;
         $('#coffee-list').html("");
@@ -281,46 +283,60 @@ $(document).ready(function(){
     google.maps.event.addListener(map, "zoom_changed", () => {
         var bounds = map.getBounds();
         theRadius = (getDistanceFromLatLonInKm(bounds.b.b, bounds.f.b, bounds.b.f, bounds.f.f) * 1000) / 6;
-        console.log(theRadius);
     });
 
 
   }
 
   // Loops through the google maps array to generate the requested markers.
+  var currentList = [];
   function callback(results, status) {
     var openClose;
+    currentList = [];
 
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+      $("#coffee-list").html("");
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]);
+        currentList.push(results[i]);
 
-        $('#coffee-list').append(`<h3 id='${results[i].place_id}'>${results[i].name}</h3><p>Rating: ${results[i].rating} | ${openClose}</p>
+        $("#coffee-list").append(`<a class="coffeeListSelect" id='${results[i].place_id}'><h3>${results[i].name}</h3></a><p>Rating: ${results[i].rating} | ${openClose}</p>
           <p>${results[i].vicinity}</p>`);
       }
     }
+
+    // When a list item is clicked, the description appears above the associated marker.
+    $(".coffeeListSelect").on("mouseover", event => {
+      var elementPos = currentList.map(x => {return x.place_id; }).indexOf(event.currentTarget.id);
+      var objectFound = currentList[elementPos];
+      createMarker(objectFound, true);
+    });
   }
 
   // Creates a marker at an inputed location pulled from the google maps search.
-  function createMarker(place) {
+  function createMarker(place, listClick) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-      title: place.name,
-      animation: google.maps.Animation.DROP
-      });
-      marker.addListener('click', function() {
-           infowindow.open(map, marker);
-         });
+        map: map,
+        position: place.geometry.location,
+        title: place.name
+    });
 
-      google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>`+
-      `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>
-      `);
-      infowindow.open(map, this);
-      });
+    if (listClick) {
+        infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
+        infowindow.open(map, marker);
+        return;
+    }
 
+    google.maps.event.addListener(marker, "mouseover", () => {
+        infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
+        infowindow.open(map, marker);
+    });  
+
+    google.maps.event.addListener(marker, "mouseout", () => {
+        infowindow.close(map, marker);
+    });  
+ 
   }
 
   // Changes the saved center and zoom variables based on the User changes.
