@@ -306,7 +306,7 @@ $(document).ready(() => {
     }
 
     // When a list item is clicked, the description appears above the associated marker.
-    $(".coffeeListSelect").on("click", event => {
+    $(".coffeeListSelect").on("mouseover", event => {
       var elementPos = currentList.map(x => {return x.place_id; }).indexOf(event.currentTarget.id);
       var objectFound = currentList[elementPos];
       createMarker(objectFound, true);
@@ -325,17 +325,18 @@ $(document).ready(() => {
     if (listClick) {
         infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
         infowindow.open(map, marker);
+        return;
+    }
 
-    } else {
-        marker.addListener('click', () => {
-            infowindow.open(map, marker);
-        });
+    google.maps.event.addListener(marker, "mouseover", () => {
+        infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
+        infowindow.open(map, marker);
+    });  
 
-        google.maps.event.addListener(marker, "click", () => {
-            infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
-            infowindow.open(map, this);
-        });  
-    } 
+    google.maps.event.addListener(marker, "mouseout", () => {
+        infowindow.close(map, marker);
+    });  
+ 
   }
 
   // Changes the saved center and zoom variables based on the User changes.
