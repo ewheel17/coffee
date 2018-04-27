@@ -1,28 +1,32 @@
-
-
-
-
 //Dash Fade In
 $(document).ready(() => {
     $("#dashboard-body").fadeIn(800);
     $("#dashboard-header").attr("max-height", "400");
   });
 
-  // Snackbar
-  $('#snackbar').mouseenter(() => {
-    $("#snackbar-hover").slideDown(600);
-  });
+//Hides map on page load
+$('#coffee-display').hide();
 
-  $('#snackbar').mouseleave(() => {
-    $("#snackbar-hover").slideUp(600);
-  });
+//Allows hitting return to submit search
+$(function() {
+    $("form").submit(function() { return false; });
+});
 
-  $('#close-snackbar').on('click', () => {
-    var element = $("#snackbar");
-    UIkit.alert(element).close();
-  })
+// // Snackbar
+// $('#snackbar').mouseenter(() => {
+//   $("#snackbar-hover").slideDown(600);
+// });
+//
+// $('#snackbar').mouseleave(() => {
+//   $("#snackbar-hover").slideUp(600);
+// });
+//
+// $('#close-snackbar').on('click', () => {
+//   var element = $("#snackbar");
+//   UIkit.alert(element).close();
+// })
 
-  $('#coffee-display').hide();
+
 
 
   // Creates a Google Map centered in on SLC.
@@ -39,12 +43,11 @@ $(document).ready(() => {
   });
 
   $('#search').on('click', () => {
-    var position = $("#sign-up-section").offset().top -50;
+    var position = $("#sign-up-section").offset().top -290;
     $('html, body').animate({
       scrollTop: position
     }, 400, () => {
-      $("#sign-up-section").fadeOut();
-      $("#card-section").fadeOut();
+      $("#landing-main").fadeOut();
       $("#coffee-display").fadeIn();
     });
 
@@ -322,6 +325,8 @@ $(document).ready(() => {
         title: place.name
     });
 
+      console.log(place)
+
     if (listClick) {
         infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
         infowindow.open(map, marker);
@@ -331,12 +336,12 @@ $(document).ready(() => {
     google.maps.event.addListener(marker, "mouseover", () => {
         infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
         infowindow.open(map, marker);
-    });  
+    });
 
     google.maps.event.addListener(marker, "mouseout", () => {
         infowindow.close(map, marker);
-    });  
- 
+    });
+
   }
 
   // Changes the saved center and zoom variables based on the User changes.
