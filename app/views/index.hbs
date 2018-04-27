@@ -20,10 +20,12 @@
 
 <body class="landing">
   <div id="landing-body">
-    <header>
+    <header id="landing-header">
       <div class="uk-position-relative">
         <div class="uk-position-center uk-text-center overlay">
+          <h2>Finding the coffee you like, when you like it.</h2>
           <div class="search-wrapper">
+            <form>
             <div uk-form-custom>
               <input class="uk-input uk-width-large" id="address-input" type="text" placeholder="Where?" autofocus>
             </div>
@@ -36,7 +38,8 @@
             <label><input class="uk-checkbox" type="checkbox" checked> Local Only</label>
             <label><input class="uk-checkbox" type="checkbox"> Serves Food</label>
           </div>
-          <h3>Finding the coffee you like, when you like it.</h3>
+        </form>
+
         </div>
         <img src="assets/images/coffee-cover.jpg" alt="">
         <div class="uk-position-top">
@@ -78,141 +81,243 @@
     </header>
 
 
-    <main>
+    <main id="landing-main">
 
-    <div class="uk-container-expand">
-      <div class="section">
-        <h1 class="uk-heading-line uk-text-center"><span>Your City. Your Coffee.</span></h1>
+      <div class="uk-container-expand">
+        <div class="section">
+          <h1 class="uk-heading-line uk-text-center"><span>Your City. Your Coffee.</span></h1>
+        </div>
       </div>
-    </div>
 
-    <div class="uk-container-expand container-dark" id="sign-up-section">
-      <div class="section">
-        <h1 class="uk-text-center">Get started today!</h1>
-        <div uk-grid>
-          <div class="uk-width-1-2@m"><img class="uk-align-center spotlight" src="assets/images/signup.png"></div>
-          <div class="uk-width-1-2@m">
-            <ol>
-              <li>Sign Up.</li>
-              <li>Let us know your style.</li>
-              <li>Get your personalized recommendations.</li>
+      <div class="uk-container-expand container-dark" id="sign-up-section">
+        <div class="section">
+          <div class="uk-container">
+            <h1 class="uk-text-center">Get started today!</h1>
+            <div uk-grid>
+              <div class="uk-width-1-2@m">
+                <img class="uk-align-center spotlight" src="assets/images/signup.png">
+              </div>
+              <div class="uk-width-1-2@m">
+                <ol>
+                  <li>Sign Up.</li>
+                  <li>Let us know your style.</li>
+                  <li>Get your personalized recommendations.</li>
+                </ol>
+              </div>
+            </div>
           </div>
-      </div>
-
-      </div>
-    </div>
-
-
-
-<div class="uk-container" id="card-section">
-  <div class="section">
-  <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top">
-          <img src="assets/images/coffee.jpg" alt="">
-        </div>
-        <div class="uk-card-body">
-         <h3 class="uk-card-title">Style.</h3>
-          <p>Coffee is an experience. Drink it in an environment that you enjoy.</p>
-</div>
-      </div>
-    </div>
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top">
-          <img src="assets/images/ilovecoffee.jpg" alt="">
-        </div>
-        <div class="uk-card-body">
-         <h3 class="uk-card-title">Love.</h3>
-          <p>Don't just live on coffee. Love your coffee. Let us help you find a cup that you'll crave more of.</p>
-</div>
-      </div>
-    </div>
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top">
-          <img src="assets/images/coffee-shop.jpg" alt="">
-        </div>
-        <div class="uk-card-body">
-         <h3 class="uk-card-title">Finesse.</h3>
-          <p>We help you match your style, your taste, and your budget!</p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
 
-
-
-
-<div class="coffee-wrapper-dash uk-position-relative">
-<div class="uk-container-expand" id="coffee-display">
-  <div class="uk-grid-collapse uk-text-center" uk-grid>
-    <div class="uk-width-1">
-      <div class="coffee-list" id="coffee-list">
-        <h5>Results:</h5>
+      <div class="uk-container uk-container-expand testimonial-section">
+        <h1> Testimonials </h1>
+        <div class="section">
+        <div class="uk-child-width-auto" uk-grid>
+          <div>
+            <div class="testimonial">
+              <img class="testimonial-rating" src="assets/images/5star.png" alt="">
+              <p>To go caffeine skinny, percolator half and half siphon caramelization arabica. Pumpkin spice, americano extra mazagran seasonal iced americano froth coffee.</p>
+              <p class="testimonial-name"> Jane Doe </p>
+              <img class="testimonial-img" src="assets/images/sample_test_img.png" alt="">
+            </div>
+          </div>
+          <div>
+            <div class="testimonial">
+              <img class="testimonial-rating" src="assets/images/5star.png" alt="">
+              <p>To go caffeine skinny, percolator half and half siphon caramelization arabica. Pumpkin spice, americano extra mazagran seasonal iced americano froth coffee.</p>
+              <p class="testimonial-name"> Jane Doe </p>
+              <img class="testimonial-img" src="assets/images/sample_test_img.png" alt="">
+            </div>
+          </div>
+          <div>
+            <div class="testimonial">
+              <img class="testimonial-rating" src="assets/images/5star.png" alt="">
+              <p>To go caffeine skinny, percolator half and half siphon caramelization arabica. Pumpkin spice, americano extra mazagran seasonal iced americano froth coffee.</p>
+              <p class="testimonial-name"> Jane Doe </p>
+              <img class="testimonial-img" src="assets/images/sample_test_img.png" alt="">
+            </div>
+          </div>
+        </div>
       </div>
-
-      <button class="uk-button uk-button-default" type="button" id="refresh-button">Refresh Search</button>
-      <div id="map"></div>
-
-    </div>
-  </div>
-</div>
-</div>
-    </main>
-
-
-    <!-- <footer class="page-footer">
-              <div class="uk-text-right copyright">
-                    <h5 class="white-text">Footer Content</h5>
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                  <p>
-                    <strong>Copyright &copy; 2018-2019</strong><br /> Neighborbrew | All Rights Reserved.<br /> Icons sourced from www.flaticon.com
-                  </p>
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+      <div class="uk-container" id="card-section">
+        <div class="section">
+                          <h1> Why indulge in coffee? </h1>
+          <div class="uk-child-width-1-3@m uk-grid-match img-grid" uk-grid>
+            <div>
+              <img src="assets/images/coffee1.jpg" alt="">
+              <h3 class="uk-card-title">Style.</h3>
+              <div class="img-grid-p">
+                <p>Coffee is an experience. Drink it in an environment that you enjoy.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/images/coffee2.jpg" alt="">
+              <h3 class="uk-card-title">Love.</h3>
+              <div class="img-grid-p">
+                <p>Don't just live on coffee. Love your coffee. Let us help you find a cup that you'll crave more of.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/images/coffee3.jpg" alt="">
+              <h3 class="uk-card-title">Finesse.</h3>
+              <div class="img-grid-p">
+                <p>We help you match your style, your taste, and your budget!</p>
+              </div>
+            </div>
+          </div>
+            <div class="uk-child-width-1-3@m uk-grid-match img-grid" uk-grid>
+              <div>
+                <img src="assets/images/coffee4.jpg" alt="">
+                <h3 class="uk-card-title">Hope.</h3>
+                <div class="img-grid-p">
+                  <p>Coffee is hope....Hope that you'll make it through the day! :)</p>
                 </div>
               </div>
-            </footer> -->
+              <div>
+
+                <img src="assets/images/coffee5.jpg" alt="">
+                <h3 class="uk-card-title">Love.</h3>
+                <div class="img-grid-p">
+                  <p>Don't just live on coffee. Love your coffee. Let us help you find a cup that you'll crave more of.</p>
+                </div>
+              </div>
+              <div>
+                <img src="assets/images/coffee6.jpg" alt="">
+                <h3 class="uk-card-title">Finesse.</h3>
+                <div class="img-grid-p">
+                  <p>We help you match your style, your taste, and your budget!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <div class="coffee-wrapper-dash uk-position-relative">
+      <div class="uk-container-expand" id="coffee-display">
+        <div class="uk-grid-collapse uk-text-center" uk-grid>
+          <div class="uk-width-1">
+            <div class="coffee-list" id="coffee-list">
+              <h5>Results:</h5>
+            </div>
+            <button class="uk-button uk-button-default" type="button" id="refresh-button">Refresh Search</button>
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="uk-container">
+      <div class="copyright">
+        <div class="uk-child-width-1-3@m" uk-grid>
+            <div>
+              <p>
+                <strong>Copyright &copy; 2018-2019</strong><br /> Neighborbrew | All Rights Reserved.
+              </p>
+            </div>
+            <div>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#contact-modal" uk-toggle>Contact</a></li>
+              <li><a class="grey-text text-lighten-3" href="#content-modal" uk-toggle>Content Policy</a></li>
+              <li><a class="grey-text text-lighten-3" href="#legal-modal" uk-toggle>Legal</a></li>
+              <li><a class="grey-text text-lighten-3" href="#disclaimer-modal" uk-toggle>Disclaimer</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="social"><a href="#"><i class="fab fa-facebook-square"></i></a></span>
+            <span class="social"><a href="#"><i class="fab fa-twitter-square"></i></a></span>
+            <span class="social"><a href="#"><i class="fab fa-instagram"></i></a></span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </footer>
 
 
 
 
-    <!--Signup Modal-->
-    <div id="sign-up-modal" class="uk-flex-top" uk-modal>
+    <!--Contact Modal-->
+    <div id="contact-modal" class="uk-flex-top" uk-modal>
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
         <button class="uk-modal-close-default" type="button" uk-close></button>
-        <img src="assets/images/Asset5.png" class="uk-align-center">
-        <h3 class="uk-text-center"> Sign Up </h3>
-        <p>You're so close to your very own, personalized coffee recommendations!</p>
+        <h3 class="uk-text-center"> Contact Us </h3>
+        <p> How can we help? </p>
         <form class="uk-form-stacked">
           <div class="uk-margin">
-            <input type="email" class="uk-input" id="email-signup" placeholder="Email">
+            <input type="text" class="uk-input" id="contact-name" placeholder="Name">
           </div>
 
           <div class="uk-margin">
-            <input type="password" class="uk-input" id="password-signup" placeholder="Password">
+            <input type="email" class="uk-input" id="contact-email" placeholder="Email">
           </div>
 
           <div class="uk-margin">
-            <button class="uk-button uk-button-primary uk-width-1-1" id="coffee-signup">Sign Up</button>
+            <textarea class="uk-textarea" rows="5" id="contact-msg" placeholder="Textarea"></textarea>
+          </div>
+
+          <div class="uk-margin">
+            <button class="uk-button uk-button-primary uk-width-1-1" id="contact-submit">Submit</button>
           </div>
         </form>
       </div>
     </div>
 
 
+    <!--Legal Modal-->
+    <div id="content-modal" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-text-center"> Content Policy </h3>
+        <p> We like colorful and creative language and we know it's hard to talk about coffe in a strictly factual way,
+          but we don't accept hate speech, harassment, personal threats, rudeness or content that is pornographic,
+          obscene or violent or is otherwise inappropriate as determined by Neighborbrew in our sole discretion.
+          Abuse towards staff and moderators is also a big nuh-uh and will not be tolerated.</p>
+
+      </div>
+    </div>
+
+
+    <!--Legal Modal-->
+    <div id="legal-modal" uk-modal>
+       <div class="uk-modal-dialog">
+         <button class="uk-modal-close-default" type="button" uk-close></button>
+
+        <h3 class="uk-text-center"> The Legal Stuff </h3>
+         <div class="uk-modal-body" uk-overflow-auto>
+        <p>When using Vivino with default settings, you have a publicly available Vivino-account, where other users can follow your activity. If you want your wine-experiences to be private, you can change your Privacy Setting from "Anyone" to "Nobody" in the app or the website.
+Vivino never posts content to your Facebook account automatically. Any sharing on Facebook, Twitter or other social networks outside Vivino only happens when you actively request the posting to happen.
+Vivino Aps owns all rights to photos taken with the Vivino app.
+When using Vivino from certain countries, with the default settings unchanged, you will receive emails from Vivino containing special offers on premium wines available at a discount. You can unsubscribe from these mails at any time, including during sign-up.</p>
+        <p> Information Collected Upon Registration: When you create or reconfigure a Vivino account, you provide some personal information, such as your name, username, password, and email address. Some of this information, for example, your name and username, is listed publicly on our Services, including on your profile page and in search results. </p>
+        <p> You may use your account settings to unsubscribe from notifications from Vivino. You may also unsubscribe by following the instructions contained within the notification or the instructions on our website. We may use your contact information to help others find your Vivino account, including through third-party services and client applications.</p>
+        <p> Your account settings control whether others can find you by your email address. If you email us, we may keep your message, email address and contact information to respond to your request. If you connect your Vivino account to your account on another service in order to cross-post between Vivino and that service, the other service may send us your registration or profile information on that service and other information that you authorize. This information enables cross-posting.</p>
+        <p> Wine ratings, Tasting Notes, Following, Followers: Our Services are designed to help you share information with the world. Our default is almost always to make the information you provide public for as long as you do not delete it from Vivino, but we generally give you settings to make the information more private if you want. Your public information is broadly and instantly disseminated. For instance, your public user profile information may be searchable by search engines. When you share information or content like photos or ratings via the Services, you should think carefully about what you are making public.</p>
+        <p> Cookies: Like many websites, we use "cookie" technology to collect additional website usage data and to improve our Services, but we do not require cookies for many parts of our Services such as searching and looking at public user profiles. A cookie is a small data file that is transferred to your computer's hard disk. Vivino may use both session cookies and persistent cookies to better understand how you interact with our Services, to monitor aggregate usage by our users and web traffic routing on our Services, and to customize and improve our Services. Most Internet browsers automatically accept cookies. You can instruct your browser, by changing its settings, to stop accepting cookies or to prompt you before accepting a cookie from the websites you visit. However, some Services may not function properly if you disable cookies.</p>
+        <p> Log Data: Our servers automatically record information ("Log Data") created by your use of the Services. Log Data may include information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device and application IDs, search terms, and cookie information. We receive Log Data when you interact with our Services, for example, when you visit our websites, sign into our Services or interact with our email notifications. Vivino uses Log Data to provide our Services and to measure, customize, and improve them. If not already done earlier, we will either delete Log Data or remove any common account identifiers, such as your username, full IP address, or email address, after 18 months.</p>
+        <div class="uk-modal-footer uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+          <button class="uk-button uk-button-primary" type="button">Save</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Disclaimer Modal-->
+    <div id="disclaimer-modal" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-text-center"> Disclaimer </h3>
+        <p> Disclaimer thingies </p>
+
+      </div>
+    </div>
 
     <!--Snackbar-->
-    <div class="uk-container uk-container-expand">
+    <!-- <div class="uk-container uk-container-expand">
 
     <div class="uk-alert-danger" id="snackbar" uk-alert>
 
@@ -231,21 +336,21 @@
         <a href="/signup" uk-toggle>Sign Up</a>
       </div>
     </div>
-  </div>
-  </div>
+  </div> -->
+    </div>
 
-  <!-- UIkit JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <!-- Custom JS -->
-  <script src="assets/js/auth.js"></script>
-  <script src="assets/js/app.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/app.js"></script>
 
-  <!-- Google Maps API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co&libraries=places&callback=initMap" async defer></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co&libraries=places&callback=initMap" async defer></script>
 
 </body>
 

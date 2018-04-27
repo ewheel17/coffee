@@ -7,15 +7,30 @@
     text-align: center !important; }
   .coffee-list img {
     display: inline !important; } }
+
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
 footer {
   margin-top: 0;
-  background-color: #f1f2f6;
-  padding: 20px; }
-  footer p {
-    margin: 0; }
+  background-color: #999;
+  padding: 30px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center; }
+  footer a {
+    color: #fff; }
+  footer a:hover {
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    color: #1e87f0;
+    text-decoration: none; }
+  footer ul {
+    list-style-type: none; }
+  footer .social svg {
+    font-size: 2rem;
+    margin: 5px; }
 
 #dashboard-body {
   display: none; }
@@ -31,9 +46,6 @@ footer {
   .search-li input {
     border-radius: 5px; }
 
-.copyright {
-  font-size: 10px; }
-
 .uk-button-primary {
   border: 0;
   border-radius: 5px;
@@ -47,6 +59,8 @@ footer {
   font-weight: 700;
   font-size: 40px !important;
   color: #fff !important;
+  -webkit-transform: scale(1, 1.3);
+  -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
 .coffee-list {
@@ -88,6 +102,8 @@ footer {
     .landing header h1, .landing header h3 {
       color: #fff;
       font-weight: 400; }
+    .landing header h2 {
+      color: #fff; }
     .landing header h1 {
       font-size: 80px; }
     .landing header .uk-input {
@@ -109,6 +125,9 @@ footer {
 
 ::-webkit-scrollbar {
   display: none; }
+
+#card-section img {
+  border-radius: 5px; }
 
 #coffee-display {
   margin-top: -50px; }
@@ -140,6 +159,8 @@ footer {
 
 .coffee-categories {
   list-style: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
   left: 0px;
@@ -154,12 +175,15 @@ footer {
   padding: 5px;
   margin: 50px;
   display: inline-block;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .coffee-categories li:hover {
   color: #fff;
   background-color: #1e87f0;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s; }
 
 .coffee-categories li p {
@@ -176,10 +200,12 @@ footer {
 
 .section h1 {
   margin-bottom: 60px;
-  font-weight: 300 !important; }
+  font-weight: 300 !important;
+  text-align: center;
+  font-size: 30px; }
+
 .section .spotlight {
-  border-radius: 15px;
-  border: 3px solid #1e87f0; }
+  border-radius: 5px; }
 
 ol li {
   font-weight: 300;
@@ -233,9 +259,9 @@ ol li {
     position: inherit !important; }
   header input {
     border: 1px solid #eee !important; }
-
   .uk-button-primary {
     margin-top: 5px; } }
+
 .coffee-categories {
   display: none; }
 
@@ -280,4 +306,61 @@ h3 {
   #sign-body #sign-form {
     height: 100vh; }
 
-/*# sourceMappingURL=app.css.map */
+.uk-card-title {
+  margin-left: 0;
+  margin-bottom: 0; }
+
+.img-grid {
+  text-align: center;
+  margin: auto; }
+  .img-grid .img-grid-p {
+    margin: auto;
+    text-align: center;
+    max-width: 250px;
+    font-size: 12px;
+    margin-top: 5px; }
+  .img-grid img {
+    max-width: 250px;
+    max-height: 250px;
+    margin: auto; }
+
+.testimonial-section {
+  padding: 30px;
+  background-color: #1e87f0;
+  text-align: center; }
+  .testimonial-section h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 300 !important; }
+  .testimonial-section .testimonial {
+    height: 200px;
+    max-width: 300px;
+    background-color: #eee;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 13px;
+    margin: 10px; }
+  .testimonial-section .testimonial-rating {
+    width: 40%; }
+  .testimonial-section .testimonial-img {
+    max-height: 50px;
+    border-radius: 50%; }
+  .testimonial-section .testimonial-name {
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px; }
+
+.uk-grid {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: auto; }
+
+.uk-first-column {
+  padding: 0; }
