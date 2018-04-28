@@ -420,12 +420,8 @@ ol li {
     font-size: 80px !important;
   }
 
-  .uk-flex-container {
-    height: 100vh;
-  }
-
   .signForm1 {
-    height:100vh;
+    height:calc(100vh - 100px);
   }
 
   .signForm2 {

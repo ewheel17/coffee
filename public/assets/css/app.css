@@ -294,10 +294,8 @@ h3 {
   .signBody1 h1, .signBody2 h1 {
     color: white !important;
     font-size: 80px !important; }
-  .signBody1 .uk-flex-container, .signBody2 .uk-flex-container {
-    height: 100vh; }
   .signBody1 .signForm1, .signBody2 .signForm1 {
-    height: 100vh; }
+    height: calc(100vh - 100px); }
   .signBody1 .signForm2, .signBody2 .signForm2 {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 1%;
