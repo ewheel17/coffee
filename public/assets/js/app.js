@@ -8,9 +8,9 @@ $(document).ready(() => {
 $('#coffee-display').hide();
 
 //Allows hitting return to submit search
-$(function() {
-    $("form").submit(function() { return false; });
-});
+// $(function() {
+//     $("form").submit(function() { return false; });
+// });
 
 // // Snackbar
 // $('#snackbar').mouseenter(() => {
