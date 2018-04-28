@@ -325,8 +325,6 @@ $(function() {
         title: place.name
     });
 
-      console.log(place)
-
     if (listClick) {
         infowindow.setContent(`<h3>${place.name}</h3><p>Rating: ${place.rating}<br />${place.vicinity}</p>` + `<div><img src="${place.photos[0].getUrl({ maxWidth: 150 })}"</div>`);
         infowindow.open(map, marker);

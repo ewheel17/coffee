@@ -7,7 +7,6 @@
     text-align: center !important; }
   .coffee-list img {
     display: inline !important; } }
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
@@ -21,8 +20,6 @@ footer {
   footer a {
     color: #fff; }
   footer a:hover {
-    -webkit-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
     color: #1e87f0;
     text-decoration: none; }
@@ -59,8 +56,6 @@ footer {
   font-weight: 700;
   font-size: 40px !important;
   color: #fff !important;
-  -webkit-transform: scale(1, 1.3);
-  -ms-transform: scale(1, 1.3);
   transform: scale(1, 1.3); }
 
 .coffee-list {
@@ -159,8 +154,6 @@ footer {
 
 .coffee-categories {
   list-style: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
   left: 0px;
@@ -175,15 +168,12 @@ footer {
   padding: 5px;
   margin: 50px;
   display: inline-block;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .coffee-categories li:hover {
   color: #fff;
   background-color: #1e87f0;
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
   transition-duration: 0.5s; }
 
 .coffee-categories li p {
@@ -203,7 +193,6 @@ footer {
   font-weight: 300 !important;
   text-align: center;
   font-size: 30px; }
-
 .section .spotlight {
   border-radius: 5px; }
 
@@ -259,9 +248,9 @@ ol li {
     position: inherit !important; }
   header input {
     border: 1px solid #eee !important; }
+
   .uk-button-primary {
     margin-top: 5px; } }
-
 .coffee-categories {
   display: none; }
 
@@ -297,14 +286,28 @@ h3 {
 .dash-header {
   margin-top: 30px; }
 
-#sign-body {
+.signBody1, .signBody2 {
   height: 100vh;
   z-index: 10;
-  background: #dba75b; }
-  #sign-body .uk-flex-container {
+  color: white !important;
+  background-size: 100%; }
+  .signBody1 h1, .signBody2 h1 {
+    color: white !important;
+    font-size: 80px !important; }
+  .signBody1 .uk-flex-container, .signBody2 .uk-flex-container {
     height: 100vh; }
-  #sign-body #sign-form {
+  .signBody1 .signForm1, .signBody2 .signForm1 {
     height: 100vh; }
+  .signBody1 .signForm2, .signBody2 .signForm2 {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1%;
+    padding: 20px; }
+
+.signBody1 {
+  background-image: url("../images/coffeeback.jpg"); }
+
+.signBody2 {
+  background-image: url("../images/coffee-login.jpg"); }
 
 .uk-card-title {
   margin-left: 0;
@@ -354,13 +357,11 @@ h3 {
     margin-bottom: 5px; }
 
 .uk-grid {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin: auto; }
 
 .uk-first-column {
   padding: 0; }
+
+/*# sourceMappingURL=app.css.map */
