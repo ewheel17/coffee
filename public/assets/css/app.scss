@@ -409,20 +409,39 @@ ol li {
   margin-top: 30px;
 }
 
-#sign-body {
+.signBody1, .signBody2 {
   height: 100vh;
   z-index: 10;
-  background: #dba75b;
+  color: white !important;
+  background-size: 100%; 
+
+  h1 {
+    color: white !important;
+    font-size: 80px !important;
+  }
 
   .uk-flex-container {
     height: 100vh;
   }
 
-  #sign-form {
+  .signForm1 {
     height:100vh;
+  }
+
+  .signForm2 {
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 1%;
+    padding: 20px;
   }
 }
 
+.signBody1 {
+  background-image: url('../images/coffeeback.jpg');
+}
+
+.signBody2 {
+  background-image: url('../images/coffee-login.jpg');
+}
 
 .uk-card-title{
   margin-left: 0;
