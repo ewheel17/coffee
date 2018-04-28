@@ -33,7 +33,7 @@ module.exports = function(passport, user) {
 
 
 passport.use('local-signup', new LocalStrategy(
-
+    
     {
         usernameField: 'email',
         passwordField: 'password',
@@ -98,7 +98,7 @@ passport.use('local-signin', new LocalStrategy(
     function(req, email, password, done) {
 
         var User = user;
-
+        console.log('hey');
         var isValidPassword = function(userpass, password) {
 
             return bCrypt.compareSync(password, userpass);
