@@ -13,6 +13,8 @@ module.exports = function(app, passport) {
       }
     ));
 
+    app.get('/profile', isLoggedIn, authController.profile);
+
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
     app.get('/account', isLoggedIn, authController.account);

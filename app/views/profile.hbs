@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Neighborbrew</title>
+  <meta name="description" content="Coffee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <!-- Font Awesome Icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/css/uikit.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+
+</head>
+
+<body>
+
+  <div class="uk-container">
+
+      <div>
+        
+        {{#each coffees }}
+          <p>{{ this.brand }}</p>
+        {{/each}}
+
+      </div>
+
+
+
+    <form>
+      <fieldset class="uk-fieldset">
+
+      <div class="uk-margin">
+        <h3><strong>Question 1</strong></h3>
+        <h5>You enjoy a good fruity-flavored coffee.</h5>
+         <select class="uk-select" id="q1" >
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+      </div>
+
+      <div class="uk-margin">
+        <h3><strong>Question 2</strong></h3>
+        <h5>You prefer sweet over earthy coffee.</h5>
+      <select class="uk-select" id="q2" >
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+      </div>
+
+      <div class="uk-margin">
+        <h3><strong>Question 3</strong></h3>
+        <h5>Coffee with floral undetones would be something you might enjoy.</h5>
+        <select class="uk-select" id="q3" >
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+      </div>
+
+      <div class="uk-margin">
+        <h3><strong>Question 4</strong></h3>
+        <h5>You like to eat strange and wonderful foods</h5>
+        <select class="uk-select" id="q4" >
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+      </div>
+
+      <div class="uk-margin">
+        <h3><strong>Question 5</strong></h3>
+        <h5>Rate your preference on coffee roasts from "light" to "dark".</h5>
+          <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+      </div>
+
+      <div class="uk-margin">
+        <h3><strong>Question 6</strong></h3>
+        <h5>Give us three flavors that intrigue you the most!</h5>
+
+        <div class="uk-grid-small" uk-grid>
+
+          <div class="uk-width-1-3@s">
+            <select class="uk-select" id="q6-1" >
+
+            </select>
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <select class="uk-select" id="q6-2" >
+                ADD ALL FLAVORS
+            </select>
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <select class="uk-select" id="q6-3" >
+                ADD ALL FLAVORS
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="uk-button uk-button-primary" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+     Submit</button>
+
+      </div>
+
+    </fieldset>
+  </form>
+
+</div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+  <!--Custom JS-->
+  <script>
+    var currentURL = window.location.origin;
+
+    $("#submit").on("click", function(e) {
+      e.preventDefault();
+
+      var inputData = {
+        name: $("#name").val(),
+        photo: $("#photo").val(),
+        scores: [
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
+        ]
+      };
+      console.log(inputData);
+
+      var userScores = inputData.scores;
+      var sumArr = [];
+      var names = [];
+
+      $.ajax({
+          url: currentURL + '/api/friends',
+          method: 'GET'
+        })
+        .then(function(friendsData) {
+          for (var i = 0; i < friendsData.length; i++) {
+            var arr = [];
+            var friendScores = friendsData[i].scores;
+            var friendNames = friendsData[i].name;
+            names.push(friendNames);
+
+            for (var x = 0; x < friendScores.length; x++) {
+              if (userScores[x] > friendScores[x]) {
+                arr.push(userScores[x] - friendScores[x])
+              } else if (userScores[x] < friendScores[x]) {
+                arr.push(friendScores[x] - userScores[x])
+              } else if (userScores[x] == friendScores[x]) {}
+            }
+            var sum = arr.reduce(function(total, num) {
+              return total + num
+            }, 0);
+            sumArr.push(sum);
+          };
+
+          bestMatch = Math.min.apply(null, sumArr);
+          var positionOfMatch = sumArr.indexOf(bestMatch);
+          var nameOfMatch = names[positionOfMatch]
+
+
+          $("#results").modal("toggle");
+          $("#user-name").html('Hi, ' + inputData.name);
+          $(".modal-body").append('Congrats! You are most like ' + nameOfMatch);
+        });
+    });
+  </script>
+</body>
+
+</html>
