@@ -149,6 +149,11 @@ footer {
 .password-text {
   font-size: 10px; }
 
+.profile-body {
+  background-color: #4ea1f3; }
+  .profile-body .uk-container-small {
+    padding: 60px; }
+
 .search-wrapper {
   padding: 12px;
   border-radius: 5px;

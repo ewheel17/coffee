@@ -202,6 +202,15 @@ footer{
   font-size: 10px;
 
 }
+
+.profile-body{
+  background-color: lighten($primary-color, 10%);
+
+  .uk-container-small{
+    padding: 60px;
+  }
+}
+
 //Media Queries
 @media screen and (min-width: 1920px) {
 
@@ -413,7 +422,7 @@ ol li {
   height: 100vh;
   z-index: 10;
   color: white !important;
-  background-size: 100%; 
+  background-size: 100%;
 
   h1 {
     color: white !important;

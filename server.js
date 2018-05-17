@@ -55,6 +55,16 @@ require('./app/routes/api-routes.js')(app, passport);
 require('./app/config/passport/passport.js')(passport, models.user);
 
 
+app.get('/profile', function(req,res){
+  models.Coffee.findAll({})
+  .then(function(data) {
+    var hbsObject = {
+      coffee: data
+    };
+    res.render('profile', hbsObject );
+  });
+});
+
 app.listen(port, function(err){
 
   if (!err)

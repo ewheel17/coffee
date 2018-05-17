@@ -6,7 +6,6 @@ module.exports = function(app) {
     db.Coffee.findAll({})
     .then(function(coffeeDb) {
       res.json(coffeeDb);
-      console.log('Coffees: ' + coffeeDb)
     });
   });
 
