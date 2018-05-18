@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
 
-    var Coffee = sequelize.define('coffee', {
+    var Coffee = sequelize.define('Coffee', {
 
         brand: {
             type: Sequelize.STRING,

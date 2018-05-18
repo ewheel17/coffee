@@ -49,10 +49,21 @@ app.set('view engine', '.hbs');
 
 //Routes
 var authRoute = require('./app/routes/auth.js')(app, passport);
+require('./app/routes/api-routes.js')(app, passport);
 
 //Load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
 
+
+app.get('/profile', function(req,res){
+  models.Coffee.findAll({})
+  .then(function(data) {
+    var hbsObject = {
+      coffee: data
+    };
+    res.render('profile', hbsObject );
+  });
+});
 
 app.listen(port, function(err){
 

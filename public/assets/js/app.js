@@ -7,10 +7,10 @@ $(document).ready(() => {
 //Hides map on page load
 $('#coffee-display').hide();
 
-//Allows hitting return to submit search
-// $(function() {
-//     $("form").submit(function() { return false; });
-// });
+// Allows hitting return to submit search
+$(function() {
+    $("#search-form").submit(function() { return false; });
+});
 
 // // Snackbar
 // $('#snackbar').mouseenter(() => {
@@ -25,6 +25,21 @@ $('#coffee-display').hide();
 //   var element = $("#snackbar");
 //   UIkit.alert(element).close();
 // })
+
+
+//FourSquare API Calls
+function useFS(){
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.foursquare.com/v2/venues/explore?client_id=2AP54L0NWPUZI51MUGHYQEPTYAASGQIBBP1N1LPOLNWYSAHM&client_secret=BHGMCRCZIV12BHHIYEEZCKR4CJ5MA4UXFQKVE5NCHRVLKUBW&v=20180323&query=coffee%20shop&near=New+York+City+NY&limit=100",
+  "method": "GET",
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+}
 
 
 
