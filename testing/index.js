@@ -8,7 +8,7 @@ nightmare
 .click("#search")
 .wait("#links a")
 .evaluate(function() {
-    return document.queryselctor("#links a").href;
+    return document.queryselector("#links a").href;
 })
 .end()
 .then(function(result) {
