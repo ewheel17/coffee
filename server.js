@@ -8,6 +8,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
+var request = require('request');
 
 
 //Set Static Directory
@@ -56,14 +57,11 @@ require('./app/config/passport/passport.js')(passport, models.user);
 
 
 app.get('/profile', function(req,res){
-  models.Coffee.findAll({})
-  .then(function(data) {
-    var hbsObject = {
-      coffee: data
-    };
-    res.render('profile', hbsObject );
+
+
+    res.render('profile');
   });
-});
+
 
 app.listen(port, function(err){
 

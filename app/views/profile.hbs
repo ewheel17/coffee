@@ -80,26 +80,19 @@
 
         <div class="uk-margin">
       Give us three flavors that intrigue you the most!
-
           <div class="uk-margin">
             <select class="uk-select" id="q6-1">
-              {{#each coffee}}
-              <option>{{profile1}}</option>
-              {{/each}}
+              <option> Select flavor profile... </option>
             </select>
           </div>
           <div class="uk-margin">
             <select class="uk-select" id="q6-2">
-              {{#each coffee}}
-              <option>{{profile2}}</option>
-              {{/each}}
+<option> Select flavor profile... </option>
             </select>
           </div>
           <div class="uk-margin">
             <select class="uk-select" id="q6-3">
-              {{#each coffee}}
-              <option>{{profile3}}</option>
-              {{/each}}
+<option> Select flavor profile... </option>
             </select>
           </div>
 
@@ -153,6 +146,121 @@
             console.log(coffeeData);
           });
       });
+
+      // List coffees
+
+      var profiles =
+      [
+              "full-bodied",
+              "caramel",
+              "chocolate",
+              "dark chocolate",
+              "milk chocolate",
+              "earthy",
+              "nutty",
+              "floral",
+              "berry",
+              "smoky",
+              "spicy",
+              "nougat",
+              "cocoa",
+              "sweet",
+              "citrus",
+              "raisin",
+              "raspberry",
+              "toffee",
+              "medium-bodied",
+              "smooth",
+              "maple",
+              "rich",
+              "blackberry",
+              "blueberry",
+              "cola",
+              "apricot",
+              "cherry",
+              "strawberry",
+              "lemon lime",
+              "nectarine",
+              "wine",
+              "apple",
+              "grape",
+              "black cherry",
+              "herbal",
+              "watermelon",
+              "brown sugar",
+              "vanilla",
+              "juicy",
+              "green apple",
+              "graham cracker",
+              "sugar",
+              "honey",
+              "cookie",
+              "toasted spice",
+              "molasses",
+              "candy",
+              "grilled vegetables",
+              "assam tea",
+              "almond",
+              "marzipan",
+              "rustic",
+              "chamomile",
+              "black pepper",
+              "toasted marshmallow",
+              "dried mango",
+              "orange",
+              "roasted vegetables",
+              "fragrant",
+              "lemon",
+              "bright",
+              "butter",
+              "malt",
+              "oily",
+              "unique",
+              "delicate",
+              "crisp",
+              "complex",
+              "kona",
+              "delicate",
+              "acidic",
+              "musty",
+              "thick",
+              "jasmine",
+              "grapefruit",
+              "half decaf",
+              "snappy",
+              "aromatic",
+              "dry",
+              "wild",
+              "thick",
+              "elegant",
+              "rounded",
+              "clean",
+              "lively",
+              "refreshing",
+              "syrup",
+              "tangy",
+              "intense",
+              "red berry",
+              "banana",
+              "tropical",
+              "melon",
+              "black tea",
+              "plum",
+              "tangerine",
+              "cacao nibs",
+              "balanced",
+              "tobacco"
+          ]
+
+      for (var i = 0; i < profiles.length; i++){
+        $("#q6-1").append('<option>' + profiles[i] + '</option>');
+        $("#q6-2").append('<option>' + profiles[i] + '</option>');
+        $("#q6-3").append('<option>' + profiles[i] + '</option>');
+
+      }
+
+
+
   </script>
 </body>
 
