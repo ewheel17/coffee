@@ -134,6 +134,10 @@
       var profileTwo = $("#q6-2").val()
       var profileThree = $("#q6-3").val()
 
+      var userCoffees = [];
+      var userCoffeesTierTwo = [];
+      var userCoffeesTierThree = [];
+
       userProfiles.push(profileOne, profileTwo, profileThree);
       console.log(userProfiles);
 
@@ -144,6 +148,54 @@
           })
           .then(function(coffeeData){
             console.log(coffeeData);
+
+            for (var i = 0; i < coffeeData.length; i++){
+              if ( coffeeData[i].profile1 === userProfiles[0] ){
+                userCoffees.push(coffeeData[i])
+                }
+              else if ( coffeeData[i].profile2 === userProfiles[0]){
+                userCoffees.push(coffeeData[i])
+              }
+              else if ( coffeeData[i].profile3 === userProfiles[0]){
+                userCoffees.push(coffeeData[i])
+              }
+              else if ( coffeeData[i].profile4 === userProfiles[0]){
+                userCoffees.push(coffeeData[i])
+              }
+            };
+            for (var i = 0; i < userCoffees.length; i++){
+              if ( userCoffees[i].profile1 === userProfiles[1] ){
+                userCoffeesTierTwo.push(userCoffees[i])
+                }
+              else if ( userCoffees[i].profile2 === userProfiles[1]){
+                userCoffeesTierTwo.push(userCoffees[i])
+              }
+              else if ( userCoffees[i].profile3 === userProfiles[1]){
+                userCoffeesTierTwo.push(userCoffees[i])
+              }
+              else if ( userCoffees[i].profile4 === userProfiles[1]){
+                userCoffeesTierTwo.push(userCoffees[i])
+              }
+            };
+            for (var i = 0; i < userCoffeesTierTwo.length; i++){
+              if ( userCoffeesTierTwo[i].profile1 === userProfiles[2] ){
+                userCoffeesTierThree.push(userCoffeesTierTwo[i])
+                }
+              else if ( userCoffeesTierTwo[i].profile2 === userProfiles[2]){
+                userCoffeesTierThree.push(userCoffeesTierTwo[i])
+              }
+              else if ( userCoffeesTierTwo[i].profile3 === userProfiles[2]){
+                userCoffeesTierThree.push(userCoffeesTierTwo[i])
+              }
+              else if ( userCoffeesTierTwo[i].profile4 === userProfiles[2]){
+                userCoffeesTierThree.push(userCoffeesTierTwo[i])
+              }
+            };
+
+            console.log('You have ' + userCoffees.length + ' Tier One coffee preferences!')
+            console.log('You have ' + userCoffeesTierTwo.length + ' Tier Two coffee preferences!')
+            console.log('You have ' + userCoffeesTierThree.length + ' Tier Three coffee preferences!')
+
           });
       });
 
@@ -258,7 +310,6 @@
         $("#q6-3").append('<option>' + profiles[i] + '</option>');
 
       }
-
 
 
   </script>
