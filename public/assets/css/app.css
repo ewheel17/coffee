@@ -91,6 +91,18 @@ footer {
     height: auto;
     display: block; }
 
+.dashboard {
+  min-height: 100vh;
+  background-color: #fff; }
+  .dashboard header {
+    max-width: 100%;
+    min-height: 200px;
+    background-image: url("../images/coffee-cartoon.jpg");
+    background-size: cover;
+    background-color: #000; }
+    .dashboard header img {
+      width: 100vw; }
+
 .landing {
   min-height: 100vh;
   background-color: #fff; }
@@ -295,25 +307,15 @@ h3 {
 .dash-header {
   margin-top: 30px; }
 
-.signBody1, .signBody2 {
+.signin {
   height: 100vh;
-  z-index: 10;
-  color: white !important;
-  background-size: 100%; }
-  .signBody1 h1, .signBody2 h1 {
-    color: white !important; }
-  .signBody1 .signForm1, .signBody2 .signForm1 {
-    height: calc(100vh - 100px); }
-  .signBody1 .signForm2, .signBody2 .signForm2 {
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 1%;
-    padding: 20px; }
-
-.signBody1 {
-  background-image: url("../images/coffeeback.jpg"); }
-
-.signBody2 {
-  background-image: url("../images/coffee-login.jpg"); }
+  background-color: #ff4757; }
+  .signin .login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 30%;
+    margin: 50px auto; }
 
 .uk-card-title {
   margin-left: 0;
