@@ -44,7 +44,9 @@ footer{
 }
 
 .uk-navbar-nav>li>a {
-  color: #fff;
+  color: $primary-color;
+  font-size: 18px;
+
 }
 
 .search-li {
@@ -55,7 +57,9 @@ footer{
   }
 }
 
+
 .uk-button-primary {
+  background-color: $primary-color;
   border: 0;
   border-radius: 5px;
   padding: 2px 15px;
@@ -63,14 +67,10 @@ footer{
   font-weight: 300 !important;
 }
 
-
-.logo-text {
-  font-family: 'Share', sans-serif !important;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 40px !important;
-  color: #fff !important;
-  transform: scale(1, 1.3);
+.uk-button-primary:hover,
+.uk-button-primary:focus,
+.uk-button-primary:active {
+background-color: darken($primary-color, 10%);
 }
 
 .coffee-list{
@@ -119,18 +119,14 @@ footer{
 
   header {
     max-width: 100%;
+    min-height: 600px;
+    background-image: url('../images/coffee-cartoon.jpg');
+    background-size: cover;
+    background-color: #000;
 
-    h1,h3 {
-      color: #fff;
-      font-weight: 400;
-    }
 
-    h2{
-      color: #fff;
-    }
-
-    h1 {
-      font-size: 80px;
+    img{
+      width: 100vw;
     }
 
     .uk-input {
@@ -141,25 +137,11 @@ footer{
     }
   }
 
-  nav {
-    img {
-      max-height: 80px;
-      padding: 10px;
-    }
-  }
 
-  .overlay {
-    z-index: 10;
-    max-width: 100vw;
 
-    label{
-      color: #fff;
-    }
-  }
-
-  #map {
-    height: 100vh;
-    z-index: 1;
+#map {
+  height: 100vh;
+  z-index: 1;
   }
 }
 
@@ -200,7 +182,6 @@ footer{
 
 .password-text{
   font-size: 10px;
-
 }
 
 .profile-body{
@@ -211,25 +192,24 @@ footer{
   }
 }
 
-//Media Queries
-@media screen and (min-width: 1920px) {
-
+#sign-up-section{
+  background-color: #eee;
 }
-
-@media screen and (max-width: 959px) {
-
-}
-
 
 
 .search-wrapper{
-  padding: 12px;
-  border-radius: 5px;
-  background-color: rgba(255,255,255,0.3);
-}
+  margin-top: 20px;
+  padding: 80px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.1);
 
-.coffee-wrapper{
-  display: none;
+  h1 {
+    font-family: 'Share', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 90px !important;
+    color: $primary-color !important;
+    letter-spacing: 1px;
+  }
 }
 
 .coffee-categories{
@@ -263,12 +243,8 @@ footer{
   font-size: 40px;
 }
 
-.container-dark{
-  background-color: $gray;
-}
-
 .section{
-  padding: 50px;
+  padding: 100px 0;
 
   .uk-heading-line{
     margin-top: 50px;
@@ -279,9 +255,10 @@ footer{
 
   h1{
     margin-bottom: 60px;
-    font-weight: 300 !important;
     text-align: center;
-    font-size: 30px;
+    font-weight: 300 !important;
+    color: $primary-color;
+    font-size: 50px !important;
   }
 
   .spotlight {
@@ -426,7 +403,6 @@ ol li {
 
   h1 {
     color: white !important;
-    font-size: 80px !important;
   }
 
   .signForm1 {
@@ -470,17 +446,24 @@ ol li {
     max-height: 250px;
     margin: auto;
   }
+
+  img:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+  }
 }
 
 
 .testimonial-section{
   padding: 30px;
+  background-image: url('../images/asfalt-light.png');
   background-color: $primary-color;
   text-align:center;
 
   h1{
 
     color: #fff;
+    font-size: 50px !important;
     margin-bottom: 30px;
     font-weight: 300 !important;
   }
@@ -523,4 +506,23 @@ ol li {
 
 .uk-first-column{
   padding: 0;
+}
+
+
+.dash-main{
+  background-color: #eee;
+  padding: 20px;
+
+  .uk-card{
+    border-radius: 10px;
+  }
+
+}
+
+.para-img{
+  min-height: 400px;
+  background-image: url("../images/frenchcafe.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+
 }
