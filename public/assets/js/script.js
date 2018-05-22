@@ -13,7 +13,6 @@
       var scoreFive = $("#q5").val()
 
       numScores.push(scoreOne, scoreTwo, scoreThree, scoreFour, scoreFive);
-      console.log(numScores);
 
       //Get profiles
       var userProfiles = [];
@@ -82,6 +81,22 @@
             console.log('You have ' + userCoffees.length + ' Tier One coffee preferences!')
             console.log('You have ' + userCoffeesTierTwo.length + ' Tier Two coffee preferences!')
             console.log('You have ' + userCoffeesTierThree.length + ' Tier Three coffee preferences!')
+
+            var finalArr = [];
+
+            for (var i = 0; i < userCoffeesTierThree.length; i++){
+              finalArr.push(userCoffeesTierThree[i]);
+            }
+
+            for (var i = 0; i < userCoffeesTierTwo.length; i++){
+              finalArr.push(userCoffeesTierTwo[i]);
+            }
+
+            for (var i = 0; i < userCoffees.length; i++){
+              finalArr.push(userCoffees[i]);
+            }
+
+            console.log(finalArr);
 
           });
       });
@@ -195,5 +210,4 @@
         $("#q6-1").append('<option>' + profiles[i] + '</option>');
         $("#q6-2").append('<option>' + profiles[i] + '</option>');
         $("#q6-3").append('<option>' + profiles[i] + '</option>');
-
       }
