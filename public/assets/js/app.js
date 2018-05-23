@@ -1,6 +1,9 @@
 //News Stories
 
 $(document).ready(() => {
+
+
+
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -16,8 +19,6 @@ $(document).ready(() => {
       var source = response.articles[i].source.name;
       var url = response.articles[i].url;
       var article = '<a href="' + url + '">' + source + ' </a>: ' + title;
-      console.log(response)
-      console.log(article);
       $("#articles").append("<p>" + article + "</p>");
     }
 

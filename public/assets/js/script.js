@@ -1,25 +1,12 @@
 
-    $("#submit").on("click", function(e){
-      e.preventDefault();
-      console.log(this);
+    $(document).ready(function(){
 
-      var currentURL = window.location.origin;
-
-      //Get numerical data
-      var numScores = [];
-      var scoreOne = $("#q1").val()
-      var scoreTwo = $("#q2").val()
-      var scoreThree = $("#q3").val()
-      var scoreFour = $("#q4").val()
-      var scoreFive = $("#q5").val()
-
-      numScores.push(scoreOne, scoreTwo, scoreThree, scoreFour, scoreFive);
-
+      var currentURL = window.location.host;
       //Get profiles
       var userProfiles = [];
-      var profileOne = $("#q6-1").val()
-      var profileTwo = $("#q6-2").val()
-      var profileThree = $("#q6-3").val()
+      var profileOne = $("#prof-one").text();
+      var profileTwo = $("#prof-two").text();
+      var profileThree = $("#prof-three").text();
 
       var tierArray = [];
       var topTierMatches = [];
@@ -28,27 +15,21 @@
 
       //Get coffees matching profiles
       $.ajax({
-            url: currentURL + '/api/coffee',
+            url: 'http://' + currentURL + '/api/coffee',
             method: 'GET'
           })
           .then(function(coffeeData){
 
             tierArray  = matchCoffeeTiers(coffeeData, userProfiles);
             topTierMatches = getTopMatches(tierArray[0], tierArray[1], tierArray[2]);
-            console.log(topTierMatches);
+            console.log('Coffee matches: ' + topTierMatches);
 
-            console.log('You have ' + tierArray[2].length + ' Tier One coffee preferences!');
-            console.log('You have ' + tierArray[1].length + ' Tier Two coffee preferences!');
-            console.log('You have ' + tierArray[0].length + ' Tier Three coffee preferences!');
-
-            updateProfile(topTierMatches);
-          });
       });
 
-      $.ajax({
-        method: 'PUT',
-        data: {"match": "hello"}
-      });
+    });
+
+
+
 
       // Get all matches.
       function matchCoffeeTiers(coffeeData, userProfiles) {
@@ -110,7 +91,8 @@
         var topMatches = [];
 
         for ( var i = 0;i < 3;i++ ) {
-          topMatches.push("Coffee Bean: " + allMatches[i].bean_name + "\nBrand: " + allMatches[i].brand);
+          $("#coffee-one").append("<p> Coffee Bean: " + allMatches[i].bean_name + "<br />Brand: " + allMatches[i].brand + "</p>")
+          // topMatches.push("Coffee Bean: " + allMatches[i].bean_name + "\nBrand: " + allMatches[i].brand);
         }
         return topMatches;
       }

@@ -10,8 +10,6 @@
   <!-- Font Awesome Icons -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-
-
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/css/uikit.min.css" />
 
@@ -47,85 +45,135 @@
         <h2> Welcome, {{firstname}}! </h2>
         <p class="not-you"> Not you? That's our bad. Please<a href="/logout"> sign out.</a></p>
         <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m"  uk-grid>
+
+
           <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Your Coffee</h3>
-                <p>{{topCoffeeOne}}</p>
-                <p>{{topCoffeeTwo}}</p>
-                <p>{{topCoffeeThree}}</p>
+            <div class="uk-card uk-card-default uk-card-hover">
+              <div class="uk-card-header">
+                  <div class="uk-grid-small uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img width="40" height="40" src="assets/images/profile.png">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h3 class="uk-card-title uk-margin-remove-bottom">Account Details</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="uk-card-body">
+
+                  <p><span class="profile-list">First name:</span>  {{firstname}}</p>
+                  <p><span class="profile-list">Last name:</span>   {{lastname}}</p>
+                  <p><span class="profile-list">Email:</span>   {{email}}</p>
+              </div>
             </div>
           </div>
 
-          <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
 
-                <h3 class="uk-card-title">Your Tastes</h3>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover">
+              <div class="uk-card-header">
+                  <div class="uk-grid-small uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img width="40" height="40" src="assets/images/resume.png">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h3 class="uk-card-title uk-margin-remove-bottom">Your Tastes</h3>
+                      </div>
+                  </div>
+              </div>
+                              <div class="uk-card-body">
                 <p> This card shows the taste profiles you elected when you first logged in. We use these to get you some sweet coffee recommendations. </p>
 
-                <p>{{profileOne}}</p>
-                <p>{{profileTwo}}</p>
-                <p>{{profileThree}}</p>
+                <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-one">{{profileOne}}</span></p>
+                <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-two">{{profileTwo}}</span></p>
+                <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-three">{{profileThree}}</span></p>
               </ul>
             </div>
           </div>
+        </div>
+
 
           <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <div class="uk-card uk-card-default uk-card-hover uk-card-articles">
               <div class="uk-card-header">
-                <h3 class="uk-card-title">Your Account</h3>
+                  <div class="uk-grid-small uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img width="40" height="40" src="assets/images/worldwide.png">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h3 class="uk-card-title uk-margin-remove-bottom">News Mentioning Coffee</h3>
+                      </div>
+                  </div>
               </div>
-              <ul>
-                <li>Shop Recommendation</li>
-                <li>Shop Recommendation</li>
-                <li>Shop Recommendation</li>
-              </ul>
-            </div>
-          </div>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-articles">
-
-                <h3 class="uk-card-title">Coffee Headlines</h3>
+                <div class="uk-card-body">
+                  <p>
+                    Recent headlines that are about coffee, mention coffee, or have coffee spilled all over them.
+                  </p>
+                  <p>
+                    Enjoy!
+                  </p>
                 <div id="articles">
-
                 </div>
             </div>
           </div>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-header">
-                <h3 class="uk-card-title">Another Card</h3>
-              </div>
-              <p>
-Praesent euismod neque mauris, sed vehicula sapien malesuada in. Quisque ullamcorper leo at sapien lobortis, sed gravida lacus sagittis. Donec pretium vulputate lorem ac consequat. Nunc sed pellentesque ipsum, sit amet ullamcorper velit. Etiam venenatis consectetur eros eget ornare. Integer non elit gravida, gravida elit vitae, luctus erat. Nunc in risus in quam congue aliquam nec et nunc. Suspendisse iaculis ultrices ligula, vel sodales tortor venenatis et. Vivamus pretium dolor quis sodales vehicula.
-</p>
-            </div>
-          </div>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-header">
-                <h3 class="uk-card-title">Another Card</h3>
-              </div>
-              <p>
-Maecenas eu orci eros. Sed nec dignissim lorem. Sed nec nunc sapien. Praesent magna velit, dignissim cursus gravida vitae, suscipit at diam. Sed vitae feugiat erat, nec malesuada est. Proin finibus eleifend risus, eget efficitur velit imperdiet ac. Curabitur lacinia lectus magna, in tincidunt est viverra sit amet. Nunc quis lacus eget nulla dignissim molestie. Aenean ipsum ex, sodales id risus eu, placerat venenatis diam.
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        <div>
+          <div class="uk-card uk-card-default uk-card-hover">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img width="40" height="40" src="assets/images/coffee-cup.png">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Coffee Recommendations</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+              <p>
+                Based on the profile you built, we recommend giving these coffee beans a shot!
+              </p>
+
+                <p class="profile-list" id="coffee-one"></p>
+                <p class="profile-list" id="coffee-two"></p>
+                <p class="profile-list" id="coffee-three"></p>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </main>
 
 
 
     <footer>
-      <div class="uk-text-center copyright">
-        <p>
-          <strong>Copyright &copy; 2018-2019</strong><br /> Alec Down, Sammy Straw, Max Wheeler | All Rights Reserved.<br /> Icons made from www.flaticon.com
-        </p>
+      <div class="uk-container">
+        <div class="copyright">
+          <div class="uk-child-width-1-3@m" uk-grid>
+            <div>
+              <p>
+                <strong>Copyright &copy; 2018-2019</strong><br /> Neighborbrew | All Rights Reserved.
+              </p>
+            </div>
+            <div>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#contact-modal" uk-toggle>Contact</a></li>
+                <li><a class="grey-text text-lighten-3" href="#content-modal" uk-toggle>Content Policy</a></li>
+                <li><a class="grey-text text-lighten-3" href="#legal-modal" uk-toggle>Legal</a></li>
+                <li><a class="grey-text text-lighten-3" href="#disclaimer-modal" uk-toggle>Disclaimer</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="social"><a href="#"><i class="fab fa-facebook-square"></i></a></span>
+              <span class="social"><a href="#"><i class="fab fa-twitter-square"></i></a></span>
+              <span class="social"><a href="#"><i class="fab fa-instagram"></i></a></span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
     </footer>
 
   </div>
@@ -139,9 +187,7 @@ Maecenas eu orci eros. Sed nec dignissim lorem. Sed nec nunc sapien. Praesent ma
 
   <!-- Custom JS -->
   <script src="assets/js/app.js"></script>
-
-  <!-- Google Maps API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5EXA2BJmcchE6c3DQ0fFK7nyyja5i2co&libraries=places&callback=initMap" async defer></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 

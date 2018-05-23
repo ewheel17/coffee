@@ -41,7 +41,10 @@ module.exports = function(passport, user) {
           email: email,
           password: userPassword,
           firstname: req.body.firstname,
-          lastname: req.body.lastname
+          lastname: req.body.lastname,
+          profileOne: req.body.q61,
+          profileTwo: req.body.q62,
+          profileThree: req.body.q63
         };
 
         User.create(data).then(function(newUser, created) {
@@ -90,4 +93,3 @@ module.exports = function(passport, user) {
     });
   }));
 }
-
