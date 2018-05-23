@@ -1,6 +1,7 @@
 
     $("#submit").on("click", function(e){
       e.preventDefault();
+      console.log(this);
 
       var currentURL = window.location.origin;
 
@@ -20,12 +21,10 @@
       var profileTwo = $("#q6-2").val()
       var profileThree = $("#q6-3").val()
 
-      var userCoffees = [];
-      var userCoffeesTierTwo = [];
-      var userCoffeesTierThree = [];
+      var tierArray = [];
+      var topTierMatches = [];
 
       userProfiles.push(profileOne, profileTwo, profileThree);
-      console.log(userProfiles);
 
       //Get coffees matching profiles
       $.ajax({
@@ -33,36 +32,25 @@
             method: 'GET'
           })
           .then(function(coffeeData){
-            console.log(coffeeData);
 
-            var resultArray  = matchCoffeeTiers(coffeeData, userProfiles);
-            userCoffees = resultArray[0];
-            userCoffeesTierTwo = resultArray[1];
-            userCoffeesTierThree = resultArray[2];
+            tierArray  = matchCoffeeTiers(coffeeData, userProfiles);
+            topTierMatches = getTopMatches(tierArray[0], tierArray[1], tierArray[2]);
+            console.log(topTierMatches);
 
-            console.log('You have ' + userCoffees.length + ' Tier One coffee preferences!')
-            console.log('You have ' + userCoffeesTierTwo.length + ' Tier Two coffee preferences!')
-            console.log('You have ' + userCoffeesTierThree.length + ' Tier Three coffee preferences!')
+            console.log('You have ' + tierArray[2].length + ' Tier One coffee preferences!');
+            console.log('You have ' + tierArray[1].length + ' Tier Two coffee preferences!');
+            console.log('You have ' + tierArray[0].length + ' Tier Three coffee preferences!');
 
-            var finalArr = [];
-
-            for (var i = 0; i < userCoffeesTierThree.length; i++){
-              finalArr.push(userCoffeesTierThree[i]);
-            }
-
-            for (var i = 0; i < userCoffeesTierTwo.length; i++){
-              finalArr.push(userCoffeesTierTwo[i]);
-            }
-
-            for (var i = 0; i < userCoffees.length; i++){
-              finalArr.push(userCoffees[i]);
-            }
-
-            console.log(finalArr);
-
+            updateProfile(topTierMatches);
           });
       });
 
+      $.ajax({
+        method: 'PUT',
+        data: {"match": "hello"}
+      });
+
+      // Get all matches.
       function matchCoffeeTiers(coffeeData, userProfiles) {
         var tier1 = [];
         var tier2 = [];
@@ -95,10 +83,39 @@
           }
         }
 
-        return [tier1, tier2, tier3];
+        return [tier3, tier2, tier1];
       }
-      // List coffees
 
+      // Convert to single array
+      function convertToSingleArray(tier3, tier2, tier1) {
+        var singleArray = [];
+        for (var i in tier3) {
+          singleArray.push(tier3[i]);
+        }
+
+        for (var i in tier2) {
+          singleArray.push(tier2[i]);
+        }
+
+        for (var i in tier1) {
+          singleArray.push(tier1[i]);
+        }
+
+        return singleArray;
+      }
+
+      // Get top matches
+      function getTopMatches(tier3, tier2, tier1) {
+        var allMatches = convertToSingleArray(tier3, tier2, tier1);
+        var topMatches = [];
+
+        for ( var i = 0;i < 3;i++ ) {
+          topMatches.push("Coffee Bean: " + allMatches[i].bean_name + "\nBrand: " + allMatches[i].brand);
+        }
+        return topMatches;
+      }
+
+      // List coffees
       var profiles =
       [
               "full-bodied",
