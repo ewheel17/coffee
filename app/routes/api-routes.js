@@ -9,6 +9,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get('/api/user', (req, res) => {
+    db.user.findAll({})
+    .then(function(coffeeDb) {
+      res.json(coffeeDb)
+    });
+  });
+
+
+
   // POST route for saving a new post
  // app.post("/api/coffee", function(req, res) {
  //   console.log(req.body);

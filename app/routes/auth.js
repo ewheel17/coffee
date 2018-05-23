@@ -1,11 +1,12 @@
 var authController = require('../controllers/authcontroller.js');
-var coffeeController = require('../controllers/coffeeController.js')
 
 module.exports = function(app, passport) {
 
     app.get('/signup', authController.signup);
 
     app.get('/signin', authController.signin);
+
+    app.get('/profile', isLoggedIn, authController.profile);
 
     app.post('/signup', passport.authenticate('local-signup', {
       successRedirect: '/profile',

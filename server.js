@@ -32,13 +32,9 @@ var models = require("./app/models");
 
 //Sync Database
 models.sequelize.sync().then(function() {
-
     console.log('Nice! Database looks fine')
-
 }).catch(function(err) {
-
     console.log(err, "Something went wrong with the Database Update!")
-
 });
 
 //For handlebars
@@ -54,13 +50,6 @@ require('./app/routes/api-routes.js')(app, passport);
 
 //Load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
-
-
-app.get('/profile', function(req,res){
-
-
-    res.render('profile');
-  });
 
 
 app.listen(port, function(err){
