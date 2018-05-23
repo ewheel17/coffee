@@ -15,7 +15,7 @@
 
       //Get coffees matching profiles
       $.ajax({
-            url: 'http://' + currentURL + '/api/coffee',
+            url: 'https://' + currentURL + '/api/coffee',
             method: 'GET'
           })
           .then(function(coffeeData){
