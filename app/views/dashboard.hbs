@@ -33,7 +33,7 @@
           </div>
           <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
-              <li><a href="/account">Account</a></li>
+
               <li><a href="/logout">Logout</a></li>
             </ul>
           </div>
@@ -43,34 +43,28 @@
 
 
     <main class="dash-main">
-
       <div class="uk-container">
-
+        <h2> Welcome, {{firstname}}! </h2>
+        <p class="not-you"> Not you? That's our bad. Please<a href="/logout"> sign out.</a></p>
         <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m"  uk-grid>
           <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-header">
                 <h3 class="uk-card-title">Your Coffee</h3>
-              </div>
-              <ul>
-                <li>Coffee Recommendation</li>
-                <li>Coffee Recommendation</li>
-                <li>Coffee Recommendation</li>
-              </ul>
+                <p>{{topCoffeeOne}}</p>
+                <p>{{topCoffeeTwo}}</p>
+                <p>{{topCoffeeThree}}</p>
             </div>
           </div>
 
           <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-header">
+
                 <h3 class="uk-card-title">Your Tastes</h3>
-              </div>
-              <ul>
-                <li>Profile Item</li>
-                <li>Profile Item</li>
-                <li>Profile Item</li>
-                <li>Profile Item</li>
-                <li>Profile Item</li>
+                <p> This card shows the taste profiles you elected when you first logged in. We use these to get you some sweet coffee recommendations. </p>
+
+                <p>{{profileOne}}</p>
+                <p>{{profileTwo}}</p>
+                <p>{{profileThree}}</p>
               </ul>
             </div>
           </div>
@@ -78,7 +72,7 @@
           <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
               <div class="uk-card-header">
-                <h3 class="uk-card-title">Your Shops</h3>
+                <h3 class="uk-card-title">Your Account</h3>
               </div>
               <ul>
                 <li>Shop Recommendation</li>
@@ -89,13 +83,12 @@
           </div>
 
           <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-header">
-                <h3 class="uk-card-title">Another Card</h3>
-              </div>
-              <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et finibus ligula. Cras ac molestie lectus. Duis congue, nisl id sagittis venenatis, lorem neque facilisis tortor, in bibendum magna quam at nulla. Morbi vel neque nec arcu interdum pharetra sit amet vel elit. Nullam feugiat libero lorem, ac tempor ex tempor sit amet.
-              </p>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-articles">
+
+                <h3 class="uk-card-title">Coffee Headlines</h3>
+                <div id="articles">
+
+                </div>
             </div>
           </div>
 
@@ -145,7 +138,6 @@ Maecenas eu orci eros. Sed nec dignissim lorem. Sed nec nunc sapien. Praesent ma
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
   <!-- Custom JS -->
-  <script src="assets/js/auth.js"></script>
   <script src="assets/js/app.js"></script>
 
   <!-- Google Maps API -->

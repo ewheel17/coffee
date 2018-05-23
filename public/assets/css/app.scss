@@ -530,3 +530,36 @@ ol li {
   background-attachment: fixed;
   background-size: cover;
 }
+
+
+.not-you{
+  font-size: 10px;
+  margin-top: -20px;
+
+  a{
+    text-decoration: none;
+    color: $primary-color;
+  }
+
+  a:hover{
+    color: darken($primary-color,10%);
+  }
+}
+
+#articles{
+  font-size: 12px;
+
+  a{
+    text-decoration: none;
+    color: $primary-color;
+  }
+
+  a:hover{
+    color: darken($primary-color,10%);
+  }
+}
+
+.uk-card-articles{
+  max-height: 500px;
+  overflow-y: auto;
+}

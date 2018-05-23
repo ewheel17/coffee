@@ -1,4 +1,28 @@
+//News Stories
 
+$(document).ready(() => {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://newsapi.org/v2/everything?q=coffee&from=2018-05-22&to=2018-05-22&sortBy=popularity&apiKey=7e3b8090b560434ab5a85fd707cb87d2",
+    "method": "GET",
+    "processData": false,
+  }
+
+  $.ajax(settings).done(function (response) {
+    for (var i = 0; i < response.articles.length; i++){
+      var title = response.articles[i].title;
+      var author = response.articles[i].author;
+      var source = response.articles[i].source.name;
+      var url = response.articles[i].url;
+      var article = '<a href="' + url + '">' + source + ' </a>: ' + title;
+      console.log(response)
+      console.log(article);
+      $("#articles").append("<p>" + article + "</p>");
+    }
+
+  });
+});
 
 //Dash Fade In
 $(document).ready(() => {
@@ -13,37 +37,6 @@ $('#coffee-display').hide();
 $(function() {
     $("#search-form").submit(function() { return false; });
 });
-
-// // Snackbar
-// $('#snackbar').mouseenter(() => {
-//   $("#snackbar-hover").slideDown(600);
-// });
-//
-// $('#snackbar').mouseleave(() => {
-//   $("#snackbar-hover").slideUp(600);
-// });
-//
-// $('#close-snackbar').on('click', () => {
-//   var element = $("#snackbar");
-//   UIkit.alert(element).close();
-// })
-
-
-//FourSquare API Calls
-function useFS(){
-  var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://api.foursquare.com/v2/venues/explore?client_id=2AP54L0NWPUZI51MUGHYQEPTYAASGQIBBP1N1LPOLNWYSAHM&client_secret=BHGMCRCZIV12BHHIYEEZCKR4CJ5MA4UXFQKVE5NCHRVLKUBW&v=20180323&query=coffee%20shop&near=New+York+City+NY&limit=100",
-  "method": "GET",
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-}
-
-
 
 
   // Creates a Google Map centered in on SLC.

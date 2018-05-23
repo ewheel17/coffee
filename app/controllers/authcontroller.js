@@ -1,4 +1,5 @@
 var exports = module.exports = {}
+var request = require('request');
 
 exports.signup = function(req, res) {
     res.render('signup');
@@ -11,9 +12,9 @@ exports.signin = function(req, res) {
 // Grab ID and access Database
 
 exports.dashboard = function(req, res) {
-    console.log(req.user);
-    console.log(req.body);
-    res.render('dashboard');
+    var userObj = req.user;
+    console.log(userObj);
+    res.render('dashboard', userObj);
 }
 
 exports.account = function(req, res) {
@@ -22,8 +23,9 @@ exports.account = function(req, res) {
 
 exports.profile = function(req,res){
     var userObj = req.user;
+    console.log(userObj);
     res.render('profile');
-};
+  };
 
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {

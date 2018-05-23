@@ -45,9 +45,31 @@ module.exports = function(sequelize, Sequelize) {
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
+        },
+
+        profileOne: {
+            type: Sequelize.TEXT
+        },
+
+        profileTwo: {
+            type: Sequelize.TEXT
+        },
+
+        profileThree: {
+            type: Sequelize.TEXT
+        },
+
+        topCoffeeOne: {
+            type: Sequelize.TEXT
+        },
+
+        topCoffeeTwo: {
+            type: Sequelize.TEXT
+        },
+
+        topCoffeeThree: {
+            type: Sequelize.TEXT
         }
-
-
     });
 
     return User;

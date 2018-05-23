@@ -394,3 +394,24 @@ h3 {
   background-image: url("../images/frenchcafe.jpg");
   background-attachment: fixed;
   background-size: cover; }
+
+.not-you {
+  font-size: 10px;
+  margin-top: -20px; }
+  .not-you a {
+    text-decoration: none;
+    color: #ff4757; }
+  .not-you a:hover {
+    color: #ff1428; }
+
+#articles {
+  font-size: 12px; }
+  #articles a {
+    text-decoration: none;
+    color: #ff4757; }
+  #articles a:hover {
+    color: #ff1428; }
+
+.uk-card-articles {
+  max-height: 500px;
+  overflow-y: auto; }
