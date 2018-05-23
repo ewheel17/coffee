@@ -9,6 +9,8 @@ exports.signin = function(req, res) {
     res.render('signin');
 }
 
+// Grab ID and access Database
+
 exports.dashboard = function(req, res) {
     var userObj = req.user;
     console.log(userObj);

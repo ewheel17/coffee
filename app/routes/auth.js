@@ -15,6 +15,8 @@ module.exports = function(app, passport) {
       }
     ));
 
+    app.put('/dashboard', isLoggedIn, authController.dashboard)
+
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
     app.get('/account', isLoggedIn, authController.account);
@@ -37,5 +39,10 @@ module.exports = function(app, passport) {
 
     res.redirect('/signin');
   }
+
+}
+
+
+function updateProfile() {
 
 }
