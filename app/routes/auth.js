@@ -1,5 +1,4 @@
 var authController = require('../controllers/authcontroller.js');
-var coffeeController = require('../controllers/coffeeController.js')
 
 module.exports = function(app, passport) {
 
@@ -7,12 +6,16 @@ module.exports = function(app, passport) {
 
     app.get('/signin', authController.signin);
 
+    app.get('/profile', isLoggedIn, authController.profile);
+
     app.post('/signup', passport.authenticate('local-signup', {
       successRedirect: '/profile',
 
       failureRedirect: '/signup'
       }
     ));
+
+    app.put('/dashboard', isLoggedIn, authController.dashboard)
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
@@ -36,5 +39,10 @@ module.exports = function(app, passport) {
 
     res.redirect('/signin');
   }
+
+}
+
+
+function updateProfile() {
 
 }

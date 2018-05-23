@@ -55,14 +55,6 @@ require('./app/routes/api-routes.js')(app, passport);
 //Load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
 
-
-app.get('/profile', function(req,res){
-
-
-    res.render('profile');
-  });
-
-
 app.listen(port, function(err){
 
   if (!err)
