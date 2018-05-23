@@ -35,48 +35,10 @@
           .then(function(coffeeData){
             console.log(coffeeData);
 
-            for (var i = 0; i < coffeeData.length; i++){
-              if ( coffeeData[i].profile1 === userProfiles[0] ){
-                userCoffees.push(coffeeData[i])
-                }
-              else if ( coffeeData[i].profile2 === userProfiles[0]){
-                userCoffees.push(coffeeData[i])
-              }
-              else if ( coffeeData[i].profile3 === userProfiles[0]){
-                userCoffees.push(coffeeData[i])
-              }
-              else if ( coffeeData[i].profile4 === userProfiles[0]){
-                userCoffees.push(coffeeData[i])
-              }
-            };
-            for (var i = 0; i < userCoffees.length; i++){
-              if ( userCoffees[i].profile1 === userProfiles[1] ){
-                userCoffeesTierTwo.push(userCoffees[i])
-                }
-              else if ( userCoffees[i].profile2 === userProfiles[1]){
-                userCoffeesTierTwo.push(userCoffees[i])
-              }
-              else if ( userCoffees[i].profile3 === userProfiles[1]){
-                userCoffeesTierTwo.push(userCoffees[i])
-              }
-              else if ( userCoffees[i].profile4 === userProfiles[1]){
-                userCoffeesTierTwo.push(userCoffees[i])
-              }
-            };
-            for (var i = 0; i < userCoffeesTierTwo.length; i++){
-              if ( userCoffeesTierTwo[i].profile1 === userProfiles[2] ){
-                userCoffeesTierThree.push(userCoffeesTierTwo[i])
-                }
-              else if ( userCoffeesTierTwo[i].profile2 === userProfiles[2]){
-                userCoffeesTierThree.push(userCoffeesTierTwo[i])
-              }
-              else if ( userCoffeesTierTwo[i].profile3 === userProfiles[2]){
-                userCoffeesTierThree.push(userCoffeesTierTwo[i])
-              }
-              else if ( userCoffeesTierTwo[i].profile4 === userProfiles[2]){
-                userCoffeesTierThree.push(userCoffeesTierTwo[i])
-              }
-            };
+            var resultArray  = matchCoffeeTiers(coffeeData, userProfiles);
+            userCoffees = resultArray[0];
+            userCoffeesTierTwo = resultArray[1];
+            userCoffeesTierThree = resultArray[2];
 
             console.log('You have ' + userCoffees.length + ' Tier One coffee preferences!')
             console.log('You have ' + userCoffeesTierTwo.length + ' Tier Two coffee preferences!')
@@ -101,6 +63,40 @@
           });
       });
 
+      function matchCoffeeTiers(coffeeData, userProfiles) {
+        var tier1 = [];
+        var tier2 = [];
+        var tier3 = [];
+
+        for (var i = 0; i < coffeeData.length; i++) {
+          var inc = 0;
+          for (var j = 0; j < 3; j++) {
+            if (coffeeData[i].profile1 === userProfiles[j]) {
+              inc++;
+            }
+            else if (coffeeData[i].profile2 === userProfiles[j]) {
+              inc++;
+            }
+            else if (coffeeData[i].profile3 === userProfiles[j]) {
+              inc++;
+            }
+            else if (coffeeData[i].profile4 === userProfiles[j]) {
+              inc++;
+
+            }
+          }
+
+          if (inc === 3) {
+            tier3.push(coffeeData[i]);
+          } else if (inc === 2) {
+            tier2.push(coffeeData[i]);
+          } else if (inc === 1) {
+            tier1.push(coffeeData[i]);
+          }
+        }
+
+        return [tier1, tier2, tier3];
+      }
       // List coffees
 
       var profiles =
