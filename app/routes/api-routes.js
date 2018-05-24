@@ -9,30 +9,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/api/user', (req, res) => {
+  app.get('/api/users', (req, res) => {
     db.user.findAll({})
-    .then(function(coffeeDb) {
-      res.json(coffeeDb)
+    .then(function(data) {
+      res.json(data);
+      console.log(data)
     });
   });
-
-
-
-  // POST route for saving a new post
- // app.post("/api/coffee", function(req, res) {
- //   console.log(req.body);
- //   db.Coffee.create({
- //     brand: "Test",
- //     bean_name: "Test Bean",
- //     roast: "Light",
- //     profile1: "floral",
- //     origin: "Test origin",
- //     decaf: 1
- //   })
- //     .then(function(coffeeDb) {
- //       res.json(coffeeDb);
- //     });
- // });
-
-
 };

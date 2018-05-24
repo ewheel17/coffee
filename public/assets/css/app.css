@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Share:400,700");
-@media (max-width: 960px) {
-  .coffee-list h3 {
-    text-align: center !important; }
-  .coffee-list p {
-    text-align: center !important; }
-  .coffee-list img {
-    display: inline !important; } }
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
@@ -188,7 +180,6 @@ footer {
   margin: 50px;
   display: inline-block;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .coffee-categories li:hover {
@@ -307,15 +298,28 @@ h3 {
 .dash-header {
   margin-top: 30px; }
 
-.signin {
-  height: 100vh;
+.signup {
   background-color: #ff4757; }
+  .signup .login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 80%;
+    margin: 50px auto;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.signin {
+  background-color: #ff4757;
+  height: calc(100vh - 210px); }
   .signin .login-form {
     background-color: #fff;
     border-radius: 10px;
     padding: 50px;
-    max-width: 30%;
-    margin: 50px auto; }
+    max-width: 50%;
+    margin: 50px auto;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .uk-card-title {
   margin-left: 0;
@@ -382,7 +386,7 @@ h3 {
 
 .uk-first-column {
   padding: 0; }
-
+ 
 .dash-main {
   background-color: #eee;
   padding: 20px; }
@@ -390,7 +394,7 @@ h3 {
     border-radius: 10px; }
 
 .para-img {
-  min-height: 400px;
+  min-height: 500px;
   background-image: url("../images/frenchcafe.jpg");
   background-attachment: fixed;
   background-size: cover; }
@@ -415,3 +419,13 @@ h3 {
 .uk-card-articles {
   max-height: 500px;
   overflow-y: auto; }
+
+.profile-list {
+  font-size: 18px;
+  margin-left: 10px;
+  text-transform: capitalize; }
+
+.pink-header.uk-navbar {
+  background-color: #ff4757; }
+  .pink-header.uk-navbar a {
+    color: #fff; }
