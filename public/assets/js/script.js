@@ -23,13 +23,8 @@
             tierArray  = matchCoffeeTiers(coffeeData, userProfiles);
             topTierMatches = getTopMatches(tierArray[0], tierArray[1], tierArray[2]);
             console.log('Coffee matches: ' + topTierMatches);
-
       });
-
     });
-
-
-
 
       // Get all matches.
       function matchCoffeeTiers(coffeeData, userProfiles) {

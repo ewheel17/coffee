@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Share:400,700");
-@media (max-width: 960px) {
-  .coffee-list h3 {
-    text-align: center !important; }
-  .coffee-list p {
-    text-align: center !important; }
-  .coffee-list img {
-    display: inline !important; } }
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif; }
 
@@ -394,7 +386,7 @@ h3 {
 
 .uk-first-column {
   padding: 0; }
-
+ 
 .dash-main {
   background-color: #eee;
   padding: 20px; }
@@ -402,7 +394,7 @@ h3 {
     border-radius: 10px; }
 
 .para-img {
-  min-height: 400px;
+  min-height: 500px;
   background-image: url("../images/frenchcafe.jpg");
   background-attachment: fixed;
   background-size: cover; }
@@ -432,3 +424,8 @@ h3 {
   font-size: 18px;
   margin-left: 10px;
   text-transform: capitalize; }
+
+.pink-header.uk-navbar {
+  background-color: #ff4757; }
+  .pink-header.uk-navbar a {
+    color: #fff; }

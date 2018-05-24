@@ -1,4 +1,3 @@
-@import 'responsive';
 @import 'vars';
 
 //***************
@@ -541,7 +540,7 @@ ol li {
 }
 
 .para-img{
-  min-height: 400px;
+  min-height: 500px;
   background-image: url("../images/frenchcafe.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -584,4 +583,12 @@ ol li {
   font-size: 18px;
   margin-left: 10px;
   text-transform: capitalize;
+}
+
+.pink-header.uk-navbar{
+  background-color: $primary-color;
+
+    a{
+      color: #fff;
+    }
 }

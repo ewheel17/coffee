@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/css/uikit.min.css" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/app.min.css">
 
 </head>
 
@@ -44,26 +44,26 @@
       <div class="uk-container">
         <h2> Welcome, {{firstname}}! </h2>
         <p class="not-you"> Not you? That's our bad. Please<a href="/logout"> sign out.</a></p>
-        <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m"  uk-grid>
+        <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
 
 
           <div>
             <div class="uk-card uk-card-default uk-card-hover">
               <div class="uk-card-header">
-                  <div class="uk-grid-small uk-flex-middle" uk-grid>
-                      <div class="uk-width-auto">
-                          <img width="40" height="40" src="assets/images/profile.png">
-                      </div>
-                      <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">Account Details</h3>
-                      </div>
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img width="40" height="40" src="assets/images/profile.png">
                   </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Account Details</h3>
+                  </div>
+                </div>
               </div>
               <div class="uk-card-body">
 
-                  <p><span class="profile-list">First name:</span>  {{firstname}}</p>
-                  <p><span class="profile-list">Last name:</span>   {{lastname}}</p>
-                  <p><span class="profile-list">Email:</span>   {{email}}</p>
+                <p><span class="profile-list">First name:</span> {{firstname}}</p>
+                <p><span class="profile-list">Last name:</span> {{lastname}}</p>
+                <p><span class="profile-list">Email:</span> {{email}}</p>
               </div>
             </div>
           </div>
@@ -72,78 +72,78 @@
           <div>
             <div class="uk-card uk-card-default uk-card-hover">
               <div class="uk-card-header">
-                  <div class="uk-grid-small uk-flex-middle" uk-grid>
-                      <div class="uk-width-auto">
-                          <img width="40" height="40" src="assets/images/resume.png">
-                      </div>
-                      <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">Your Tastes</h3>
-                      </div>
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img width="40" height="40" src="assets/images/resume.png">
                   </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Your Tastes</h3>
+                  </div>
+                </div>
               </div>
-                              <div class="uk-card-body">
+              <div class="uk-card-body">
                 <p> This card shows the taste profiles you elected when you first logged in. We use these to get you some sweet coffee recommendations. </p>
 
                 <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-one">{{profileOne}}</span></p>
                 <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-two">{{profileTwo}}</span></p>
                 <p class="profile-list"><i class="fas fa-coffee"></i>&nbsp;&nbsp;<span id="prof-three">{{profileThree}}</span></p>
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
 
           <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-articles">
               <div class="uk-card-header">
-                  <div class="uk-grid-small uk-flex-middle" uk-grid>
-                      <div class="uk-width-auto">
-                          <img width="40" height="40" src="assets/images/worldwide.png">
-                      </div>
-                      <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">News Mentioning Coffee</h3>
-                      </div>
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img width="40" height="40" src="assets/images/worldwide.png">
                   </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">News Mentioning Coffee</h3>
+                  </div>
+                </div>
               </div>
-                <div class="uk-card-body">
-                  <p>
-                    Recent headlines that are about coffee, mention coffee, or have coffee spilled all over them.
-                  </p>
-                  <p>
-                    Enjoy!
-                  </p>
+              <div class="uk-card-body">
+                <p>
+                  Recent headlines that are about coffee, mention coffee, or have coffee spilled all over them.
+                </p>
+                <p>
+                  Enjoy!
+                </p>
                 <div id="articles">
                 </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <div class="uk-card uk-card-default uk-card-hover">
-            <div class="uk-card-header">
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover">
+              <div class="uk-card-header">
                 <div class="uk-grid-small uk-flex-middle" uk-grid>
-                    <div class="uk-width-auto">
-                        <img width="40" height="40" src="assets/images/coffee-cup.png">
-                    </div>
-                    <div class="uk-width-expand">
-                        <h3 class="uk-card-title uk-margin-remove-bottom">Coffee Recommendations</h3>
-                    </div>
+                  <div class="uk-width-auto">
+                    <img width="40" height="40" src="assets/images/coffee-cup.png">
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Coffee Recommendations</h3>
+                  </div>
                 </div>
-            </div>
-            <div class="uk-card-body">
-              <p>
-                Based on the profile you built, we recommend giving these coffee beans a shot!
-              </p>
+              </div>
+              <div class="uk-card-body">
+                <p>
+                  Based on the profile you built, we recommend giving these coffee beans a shot!
+                </p>
 
                 <p class="profile-list" id="coffee-one"></p>
                 <p class="profile-list" id="coffee-two"></p>
                 <p class="profile-list" id="coffee-three"></p>
+              </div>
             </div>
           </div>
+
+
         </div>
-
-
-      </div>
     </main>
 
 
@@ -173,9 +173,91 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
     </footer>
 
+  </div>
+
+
+  <!--Contact Modal-->
+  <div id="contact-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3 class="uk-text-center"> Contact Us </h3>
+      <p> How can we help? </p>
+      <form class="uk-form-stacked">
+        <div class="uk-margin">
+          <input type="text" class="uk-input" id="contact-name" placeholder="Name">
+        </div>
+
+        <div class="uk-margin">
+          <input type="email" class="uk-input" id="contact-email" placeholder="Email">
+        </div>
+
+        <div class="uk-margin">
+          <textarea class="uk-textarea" rows="5" id="contact-msg" placeholder="Textarea"></textarea>
+        </div>
+
+        <div class="uk-margin">
+          <button class="uk-button uk-button-primary uk-width-1-1" id="contact-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!--Legal Modal-->
+  <div id="content-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3 class="uk-text-center"> Content Policy </h3>
+      <p> We like colorful and creative language and we know it's hard to talk about coffe in a strictly factual way, but we don't accept hate speech, harassment, personal threats, rudeness or content that is pornographic, obscene or violent or is otherwise
+        inappropriate as determined by Neighborbrew in our sole discretion. Abuse towards staff and moderators is also a big nuh-uh and will not be tolerated.</p>
+
+    </div>
+  </div>
+
+
+  <!--Legal Modal-->
+  <div id="legal-modal" uk-modal>
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+
+      <h3 class="uk-text-center"> The Legal Stuff </h3>
+      <div class="uk-modal-body" uk-overflow-auto>
+        <p> Information Collected Upon Registration: When you create or reconfigure a Neighborbrew account, you provide some personal information, such as your name, username, password, and email address. Some of this information, for example, your name and
+          username, is listed publicly on our Services, including on your profile page and in search results. </p>
+        <p> You may use your account settings to unsubscribe from notifications from Neighborbrew. You may also unsubscribe by following the instructions contained within the notification or the instructions on our website. We may use your contact information
+          to help others find your Neighborbrew account, including through third-party services and client applications.</p>
+        <p> Your account settings control whether others can find you by your email address. If you email us, we may keep your message, email address and contact information to respond to your request. If you connect your Neighborbrew account to your account
+          on another service in order to cross-post between Neighborbrew and that service, the other service may send us your registration or profile information on that service and other information that you authorize. This information enables cross-posting.</p>
+        <p> Coffee ratings, Tasting Notes, Following, Followers: Our Services are designed to help you share information with the world. Our default is almost always to make the information you provide public for as long as you do not delete it from Neighborbrew,
+          but we generally give you settings to make the information more private if you want. Your public information is broadly and instantly disseminated. For instance, your public user profile information may be searchable by search engines. When
+          you share information or content like photos or ratings via the Services, you should think carefully about what you are making public.</p>
+        <p> Cookies: Like many websites, we use "cookie" technology to collect additional website usage data and to improve our Services, but we do not require cookies for many parts of our Services such as searching and looking at public user profiles. A
+          cookie is a small data file that is transferred to your computer's hard disk. Neighborbrew may use both session cookies and persistent cookies to better understand how you interact with our Services, to monitor aggregate usage by our users and
+          web traffic routing on our Services, and to customize and improve our Services. Most Internet browsers automatically accept cookies. You can instruct your browser, by changing its settings, to stop accepting cookies or to prompt you before accepting
+          a cookie from the websites you visit. However, some Services may not function properly if you disable cookies.</p>
+        <p> Log Data: Our servers automatically record information ("Log Data") created by your use of the Services. Log Data may include information such as your IP address, browser type, operating system, the referring web page, pages visited, location,
+          your mobile carrier, device and application IDs, search terms, and cookie information. We receive Log Data when you interact with our Services, for example, when you visit our websites, sign into our Services or interact with our email notifications.
+          Neighborbrew uses Log Data to provide our Services and to measure, customize, and improve them. If not already done earlier, we will either delete Log Data or remove any common account identifiers, such as your username, full IP address, or
+          email address, after 18 months.</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Disclaimer Modal-->
+  <div id="disclaimer-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3 class="uk-text-center"> Disclaimer </h3>
+      <p>Neighborbrew has made every attempt to ensure the accuracy and reliability of the information provided on this website. However, the information is provided "as is" without warranty of any kind. Neighborbrew does not accept any responsibility or
+        liability for the accuracy, content, completeness, legality, or reliability of the information contained on this website.</p>
+
+      <p>No warranties, promises and/or representations of any kind, expressed or implied, are given as to the nature, standard, accuracy or otherwise of the information provided in this website nor to the suitability or otherwise of the information to your
+        particular circumstances. </p>
+
+    </div>
   </div>
 
   <!-- UIkit JS -->
@@ -186,8 +268,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
   <!-- Custom JS -->
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
 
 </body>
 
